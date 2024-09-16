@@ -4,6 +4,7 @@
 ## Enlaces/Tutoriales
 * [Debloat Windows](tutoriales/debloat.md)
 * [Instalación de software en Windows con scoop](https://scoop.sh)
+* [Instalación de software en Windows con ninite](https://ninite.com/)
 ## Apuntes
 ### UT0
 #### Redes

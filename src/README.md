@@ -4,4 +4,5 @@
 * [Criterios de evaluación del módulo]()
 * [Repaso de direccionamiento IP](apuntes/ut0/direccionamiento_ip.md)
 * [Cambiar nombre equipo Ubuntu](apuntes/ut0/cambiar_nombre_equipo_ubuntu.md)
+* [Comandos básicos en Linux](apuntes/ut0/comandos_linux.md)
 ## Recursos

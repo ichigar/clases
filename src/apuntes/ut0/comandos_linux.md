@@ -1,6 +1,3 @@
-Aquí tienes el texto convertido a markdown:
-
-```markdown
 # COMANDOS LINUX PARA LA GESTIÓN DE ARCHIVOS Y DIRECTORIOS
 
 Todo buen administrador de sistemas debería saber cómo crear, borrar, editar, asignar permisos, visualizar, copiar, mover y determinar el tipo de ficheros y programas.
@@ -262,4 +259,4 @@ rm [Opciones] archivos
 ```bash
 usuario@a1pc00:~$ rm examples.desktop
 ```
-```
+

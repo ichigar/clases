@@ -1,4 +1,4 @@
 # Clases
 Repositorio con los apuntes de los módulos impartidos
 ## Acceso a apuntes
-*[SRC - Servicios en red](src/README.md)
+* [SRC - Servicios en red](src/README.md)

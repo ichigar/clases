@@ -2,5 +2,5 @@
 ## Apuntes
 ### UT0
 * [Criterios de evaluación del módulo]()
-* [Repaso de direccionamiento IP](apuntes/direccionamento_ip.md)
+* [Repaso de direccionamiento IP](apuntes/direccionamiento_ip.md)
 ## Recursos

@@ -160,26 +160,26 @@ producto
 
 ---
 
-### 1. **Por Propósito**
-* Lenguajes de marcas de propósito general
-* Lenguajes de marcas de propósito específico
-* 
+### 1. **Por Ámbito de Aplicación**
+
+* Preséntación
+* Intercambio de datos
+* Configuración
+
 ---
 
-### 2. **Por su estructura**
+### 2. **Por Propósito**
+* Lenguajes de marcas de propósito general
+* Lenguajes de marcas de propósito específico
+
+---
+
+### 3. **Por su estructura**
 
 * Lenguajes de marcas basados en etiquetas
 * Lenguajes de marcas basados en delimitadores
 * Lenguajes de marcas basados en campos
 
-
----
-
-### 3. **Por Ámbito de Aplicación**
-
-* Web
-* Intercambio de Datos
-* Configuración
 
 ---
 
@@ -226,7 +226,7 @@ producto
 
 ---
 
-### **XML (eXtensible Markup Language)**:
+### XML (eXtensible Markup Language):
 - Usado principalmente para el intercambio de datos.
 - Es flexible y extensible, permitiendo crear nuevas etiquetas según la necesidad.
 
@@ -247,7 +247,7 @@ producto
 
 ---
 
-### **JSON (JavaScript Object Notation)**:
+### JSON (JavaScript Object Notation):
 
 - Un formato ligero para el intercambio de datos, principalmente utilizado en aplicaciones web.
 - Se basa en la sintaxis de objetos de JavaScript.
@@ -271,7 +271,7 @@ producto
 
 ---
 
-### **YAML (YAML Ain't Markup Language)**:
+### YAML (YAML Ain't Markup Language):
 - Un formato de serialización de datos legible por humanos.
 - A menudo utilizado en archivos de configuración.
 - Ejemplo:
@@ -295,7 +295,7 @@ network:
 
 ---
 
-### **Markdown**:
+### Markdown:
 - Usado para crear texto enriquecido de forma sencilla.
 - Principalmente utilizado en documentación y foros.
 
@@ -313,6 +313,26 @@ Ingredientes:
 - 1 cebolla
 - Aceite de oliva
 - Sal y pimienta al gusto
+```
+
+---
+
+### VCF
+* También conocido como vCard
+* Formato estándar utilizado para intercambiar información de contacto entre aplicaciones.
+
+```vcf
+BEGIN:VCARD
+VERSION:3.0
+FN:John Doe
+N:Doe;John;;;
+ORG:Example Corporation
+TITLE:Senior Software Engineer
+TEL;TYPE=WORK,VOICE:+1-555-555-5555
+EMAIL:john.doe@example.com
+ADR;TYPE=WORK:;;1234 Example Road;Sample City;CA;94043;USA
+URL:https://www.example.com
+END:VCARD
 ```
 
 ---

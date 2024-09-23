@@ -11,13 +11,16 @@
   </head>
 
   <body>
-
+    <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+      </nav>
     <header>
       <div class="container">
         <a id="a-title" href="{{ '/' | relative_url }}">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        <hr>
+
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
         <section id="downloads">
           <a href="{{ '/' | relative_url }}" class="btn">Inicio</a>
@@ -36,7 +39,7 @@
       <section id="main_content">
         {{ content }}
       </section>
-      <hr>
+      {{ --- }}
     </div>
     {% include footer.html %}
   </body>

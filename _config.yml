@@ -1,5 +1,5 @@
-title: Apuntes Clase
-description: Curso 2024-25 - IES El Rincón
+title: [Apuntes Clase]
+description: [Curso 2024-25 - IES El Rincón]
 remote_theme: pages-themes/dinky@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one

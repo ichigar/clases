@@ -26,12 +26,6 @@
           {% endif %}
           <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
-        <section id="nav">
-              <a href="{{ '/' | relative_url }}"" class="btn">Inicio</a>
-              <a href="{{ '/rde' | relative_url }}"" class="btn">RDE</a>
-              <a href="{{ '/src' | relative_url }}"" class="btn">SRC</a>
-              <a href="{{ '/lnd' | relative_url }}"" class="btn">LND</a>
-        </section>
       </div>
     </header>
 
@@ -39,6 +33,14 @@
       <section id="main_content">
         {{ content }}
       </section>
+    </div>
+    <div class="footer">
+        <section id="nav">
+              <a href="{{ '/' | relative_url }}"" class="btn">Inicio</a>
+              <a href="{{ '/rde' | relative_url }}"" class="btn">RDE</a>
+              <a href="{{ '/src' | relative_url }}"" class="btn">SRC</a>
+              <a href="{{ '/lnd' | relative_url }}"" class="btn">LND</a>
+        </section>
     </div>
   </body>
 </html>

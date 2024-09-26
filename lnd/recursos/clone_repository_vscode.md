@@ -17,3 +17,5 @@
 5. shift + ctrl + p -> clone -> URL
 
 6. Ir a la extensíón de git-hub y login
+
+7. Modificar contenido + commit + sync changes

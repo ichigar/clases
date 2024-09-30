@@ -6,6 +6,7 @@
 * [Debloat Windows](tutoriales/debloat.md)
 * [Instalación de software en Windows con scoop](https://scoop.sh)
 * [Instalación de software en Windows con ninite](https://ninite.com/)
+* [Configuración de Ubuntu server como router + NAT](tutoriales/ubuntu_router_nat.md)
 
 ## Apuntes
 ### UT0 - Repaso de conceptos de 1º

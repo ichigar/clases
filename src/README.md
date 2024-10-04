@@ -1,6 +1,8 @@
 # SRC - Servicios en red
 ## Recursos
 * [Criterios de evaluación del módulo]()
+### Rúbricas
+* [Rúbrica para evaluación de trabajo en grupo con presentación](recursos/rubricas/trabajo_grupo_presentacion.md)
 
 ## Enlaces/Tutoriales
 * [Debloat Windows](tutoriales/debloat.md)

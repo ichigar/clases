@@ -1,6 +1,8 @@
 # SRC - Servicios en red
+
 ## Recursos
 * [Criterios de evaluación del módulo]()
+
 ### Rúbricas
 * [Rúbrica para evaluación de trabajo en grupo con presentación](recursos/rubricas/trabajo_grupo_presentacion.md)
 
@@ -11,7 +13,9 @@
 * [Configuración de Ubuntu server como router + NAT](tutoriales/ubuntu_router_nat.md)
 
 ## Apuntes
+
 ### UT0 - Repaso de conceptos de 1º
+
 #### Redes
 * [Repaso de direccionamiento IP](apuntes/ut0/direccionamiento_ip.md)
 * [Solucionar problema Ip duplicada en máquinas virtuales clonadas](apuntes/ut0/ip_duplicada_m_clonada.md)

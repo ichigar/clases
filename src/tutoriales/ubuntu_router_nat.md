@@ -118,15 +118,18 @@ net.ipv4.ip_forward = 1
 ```
 
 2. Revisa las reglas de `iptables`:
-   ```bash
-   sudo iptables -L -t nat
-   sudo iptables -L -v
-   ```
+```bash
+sudo iptables -L -t nat
+sudo iptables -L -v
+```
+Si queremos empezar desde cero y eliminar todas las reglas que hemos creado ejecutamos:
+```bash
+sudo iptables -F -t nat
+sudo iptables -F
+```
 
 3. Verifica que las interfaces de red estén configuradas correctamente usando el comando `ip a`.
 
 
 
-¡Con esto, tu equipo Ubuntu debería estar funcionando como un router con NAT activado!
-```
 

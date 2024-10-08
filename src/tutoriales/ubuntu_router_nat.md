@@ -43,8 +43,8 @@ sudo iptables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE
 Permitir el reenvío de tráfico desde la red interna hacia la externa:
 
 ```bash
-sudo iptables -A FORWARD -i enp0s8 -o enp3s0 -j ACCEPT
-sudo iptables -A FORWARD -i enp3s0 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+sudo iptables -A FORWARD -i enp0s3 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT
 ```
 
 ## 3. Guardar las reglas de `iptables`
@@ -61,6 +61,17 @@ Si ya tienes instalado el paquete, puedes guardar las reglas manualmente ejecuta
 
 ```bash
 sudo netfilter-persistent save
+```
+
+Si nos hemos equivocado o queremos modificar las reglas podemos hacerlo editando el fichero en el que se almacenan:
+
+```bash
+sudo nano /etc/iptables/rules.v4
+```
+Para que se apliquen las reglas del fichero ejecutamos:
+
+```bash
+sudo iptables-restore < /etc/iptables/rules.v4
 ```
 
 ## 4. Verificar la conectividad

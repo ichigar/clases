@@ -2,7 +2,7 @@
 ## Especificaciones del lenguaje de marcas:
 * Nombre: **RecetarioML**
 * Extensión que tendrán los ficheros de este lenguaje de marcas: **.rml**
-* Tipo de lenguaje de marcas: intercambio de informacion
+* Tipo de lenguaje de marcas: **intercambio de informacion**
 
 ## Descripción
 

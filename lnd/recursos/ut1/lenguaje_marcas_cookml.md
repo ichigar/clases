@@ -1,32 +1,48 @@
-# Ejmplo de lenguaje de marcas de recetas de cocina
-## Características del lenguaje de marcas:
-* Nombre: **CookML**
-* Extensión que tendrán los ficheros de este lenguaje de marcas: **.cml**
+# Ejmplo de lenguaje de marcas de recetario de cocina
+## Especificaciones del lenguaje de marcas:
+* Nombre: **RecetarioML**
+* Extensión que tendrán los ficheros de este lenguaje de marcas: **.rml**
 * Tipo de lenguaje de marcas: intercambio de informacion
 
-## Estructura de etiquetas del lenguaje de marcas
+## Descripción
+
+Este lenguaje de marcas se utilizará para codificar un recetario de cocina. 
+* El recetario consiste en una serie de recetas individuales
+* Cada receta debe tener
+  * título
+  * metadatos (descripción general de la misma)
+    * Los metadatos deben incluir: el autor, el número de porciones/raciones de la receta, el tiempo total de preparación y la dificultad.
+  * ingredientes
+    * Los ingredientes se incluyen en una secuencia de ingredientes individuales, cada uno de ellos tiene un atributo con la cantidad y dentro de la etiqueta aparece el nombre del ingrediente.
+  * utensilios para prepararla
+    * Los utensilios son las herramientas de cocina necesarias para elaborar la receta
+  * instrucciones. Las instrucciones son opcionales, el resto de elementos son obligatorios.
+    * Las instrucciones incluyen de forma ordenada los pasos necesarios para elaborar la receta. Las instrucciones son opcionales. Cada paso incluye en la etiqueta su descripción y un atributo tiempo con los minutos necesarios. El tiempo de cada paso es opcional.
+
+
+## Estructura de etiquetas del lenguaje de marcas y valores permitidos
 ```
 recetario/
 │
 ├── receta/
-│   ├── titulo
+│   ├── titulo - Cadena de texto
 │   ├── metadatos/
-│   │   ├── autor
-│   │   ├── porciones
-│   │   ├── tiempoPreparacion
-│   │   └── dificultad
+│   │   ├── autor - Cadena de texto
+│   │   ├── porciones - Número entero
+│   │   ├── tiempoPreparacion - Número entero
+│   │   └── dificultad - valores("Fácil", "Medio", "Difícil")
 │   ├── ingredientes/
-│   │   ├── ingrediente (cantidad="")
+│   │   ├── ingrediente (cantidad="") - ingrediente cadena de texto, atributo cantidad cadena de texto
 │   │   ├── ingrediente (cantidad="")
 │   │   └── ... 
 │   ├── utensilios/
-│   │   ├── utensilio
+│   │   ├── utensilio - cadena de texto
 │   │   ├── utensilio
 │   │   └── ...
-│   └── instrucciones/
-│       ├── paso (tiempo="") (opcional)
+│   └── instrucciones/ (opcional)
+│       ├── paso (tiempo="") - paso cadena de texto, atributo número entero de minutos entre comillas
 │       │   └── descripcion
-│       ├── paso (tiempo="") (opcional)
+│       ├── paso (tiempo="") 
 │       │   └── descripcion
 │       └── ... 
 │
@@ -34,6 +50,7 @@ recetario/
 │   ├── titulo
 │   ├── metadatos/
 │   │   ├── autor
+│   │   ├── porciones
 │   │   ├── tiempoPreparacion
 │   │   └── cocina
 │   ├── ingredientes/
@@ -45,9 +62,9 @@ recetario/
 │   │   ├── utensilio
 │   │   └── ...
 │   └── instrucciones/
-│       ├── paso (tiempo="") (opcional)
+│       ├── paso (tiempo="") 
 │       │   └── descripcion
-│       ├── paso (tiempo="") (opcional)
+│       ├── paso (tiempo="") 
 │       │   └── descripcion
 │       └── ... 
 │
@@ -62,7 +79,8 @@ recetario/
         <titulo>Spaghetti a la Boloñesa</titulo>        
         <metadatos>
             <autor>Juan Pérez</autor>
-            <tiempoPreparacion>15 min</tiempoPreparacion>
+            <porciones>4</porciones>
+            <tiempoPreparacion>15</tiempoPreparacion>
             <dificultad>Fácil</dificultad>
         </metadatos>
 
@@ -71,10 +89,9 @@ recetario/
             <ingrediente cantidad="400g">Carne molida</ingrediente>
             <ingrediente cantidad="2">Tomates</ingrediente>
             <ingrediente cantidad="1">Cebolla</ingrediente>
-            <ingrediente cantidad="2 dientes">Ajo</ingrediente>
             <ingrediente cantidad="100ml">Aceite de oliva</ingrediente>
-            <ingrediente cantidad="Sal">Al gusto</ingrediente>
-            <ingrediente cantidad="Pimienta">Al gusto</ingrediente>
+            <ingrediente cantidad="Al gusto">Sal</ingrediente>
+            <ingrediente cantidad="Al gusto">Pimienta</ingrediente>
         </ingredientes>
 
         <utensilios>
@@ -89,7 +106,7 @@ recetario/
                 <descripcion>Calentar el aceite en una sartén a fuego medio.</descripcion>
             </paso>
             <paso tiempo="10 min">
-                <descripcion>Agregar la cebolla y el ajo picados, cocinar hasta que estén dorados.</descripcion>
+                <descripcion>Agregar la cebolla cocinar hasta que estén dorados.</descripcion>
             </paso>
             <paso tiempo="15 min">
                 <descripcion>Incorporar la carne molida y cocinar hasta que se dore completamente.</descripcion>
@@ -105,12 +122,6 @@ recetario/
             </paso>
         </instrucciones>
 
-        <informacionNutricional>
-            <calorias>650 kcal</calorias>
-            <proteinas>30g</proteinas>
-            <carbohidratos>80g</carbohidratos>
-            <grasas>20g</grasas>
-        </informacionNutricional>
     </receta>
 
     <receta>
@@ -118,7 +129,8 @@ recetario/
 
         <metadatos>
             <autor>María López</autor>
-            <tiempoPreparacion>10 min</tiempoPreparacion>
+            <porciones>2</porciones>
+            <tiempoPreparacion>10</tiempoPreparacion>
             <dificultad>Fácil</dificultad>
         </metadatos>
 
@@ -126,10 +138,9 @@ recetario/
             <ingrediente cantidad="1">Lechuga romana</ingrediente>
             <ingrediente cantidad="100g">Pechuga de pollo</ingrediente>
             <ingrediente cantidad="50g">Queso parmesano</ingrediente>
-            <ingrediente cantidad="100g">Crutones</ingrediente>
             <ingrediente cantidad="50ml">Aderezo César</ingrediente>
-            <ingrediente cantidad="Sal">Al gusto</ingrediente>
-            <ingrediente cantidad="Pimienta">Al gusto</ingrediente>
+            <ingrediente cantidad="Al gusto">Sal</ingrediente>
+            <ingrediente cantidad="Al gusto">Pimienta</ingrediente>
         </ingredientes>
 
         <utensilios>
@@ -146,7 +157,7 @@ recetario/
                 <descripcion>Saltear el pollo en una sartén con un poco de sal y pimienta.</descripcion>
             </paso>
             <paso>
-                <descripcion>Mezclar la lechuga, el pollo, los crutones y el queso en la ensaladera.</descripcion>
+                <descripcion>Mezclar la lechuga, el pollo y el queso en la ensaladera.</descripcion>
             </paso>
             <paso>
                 <descripcion>Agregar el aderezo César y mezclar bien. Servir frío.</descripcion>

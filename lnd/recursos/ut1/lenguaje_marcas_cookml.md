@@ -19,7 +19,6 @@ Este lenguaje de marcas se utilizará para codificar un recetario de cocina.
   * instrucciones. Las instrucciones son opcionales, el resto de elementos son obligatorios.
     * Las instrucciones incluyen de forma ordenada los pasos necesarios para elaborar la receta. Las instrucciones son opcionales. Cada paso incluye en la etiqueta su descripción y un atributo tiempo con los minutos necesarios. El tiempo de cada paso es opcional.
 
-
 ## Estructura de etiquetas del lenguaje de marcas y valores permitidos
 ```
 recetario/
@@ -165,8 +164,4 @@ recetario/
         </instrucciones>
     </receta>
 </recetario>
-
 ```
-
-Etiquetas permitidas y su descripción
-Valores permitidos para dichas etiquetas (Ejemplo enteros del 1 al 10, números realies, cadena de 5 a 100 caracteres de longitud, ...)

@@ -7,7 +7,7 @@
 ## Descripción
 
 Este lenguaje de marcas se utilizará para codificar un recetario de cocina. 
-* El recetario consiste en una serie de recetas individuales
+* El recetario contiene recetas individuales
 * Cada receta debe tener
   * título
   * metadatos (descripción general de la misma)
@@ -15,9 +15,9 @@ Este lenguaje de marcas se utilizará para codificar un recetario de cocina.
   * ingredientes
     * Los ingredientes se incluyen en una secuencia de ingredientes individuales, cada uno de ellos tiene un atributo con la cantidad y dentro de la etiqueta aparece el nombre del ingrediente.
   * utensilios para prepararla
-    * Los utensilios son las herramientas de cocina necesarias para elaborar la receta
-  * instrucciones. Las instrucciones son opcionales, el resto de elementos son obligatorios.
-    * Las instrucciones incluyen de forma ordenada los pasos necesarios para elaborar la receta. Las instrucciones son opcionales. Cada paso incluye en la etiqueta su descripción y un atributo tiempo con los minutos necesarios. El tiempo de cada paso es opcional.
+    * Los utensilios contiene secuencia de utensilios individuales que son las herramientas de cocina necesarias para elaborar la receta
+  * instrucciones. Contiene pasos. Las instrucciones son opcionales, el resto de elementos son obligatorios.
+    * Los pasos son una secuencia ordenada de los pasos necesarios para elaborar la receta. Las instrucciones son opcionales. Cada paso incluye en la etiqueta su descripción y un atributo tiempo con los minutos necesarios. El tiempo de cada paso es opcional.
 
 ## Estructura de etiquetas del lenguaje de marcas y valores permitidos
 ```

@@ -1,4 +1,4 @@
-# Ejmplo de lenguaje de marcas de recetario de cocina
+# Lenguaje de marcas de recetario de cocina
 ## Especificaciones del lenguaje de marcas:
 * Nombre: **RecetarioML**
 * Extensión que tendrán los ficheros de este lenguaje de marcas: **.rml**

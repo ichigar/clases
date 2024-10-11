@@ -25,5 +25,8 @@
 * [Cambiar nombre equipo Ubuntu](apuntes/ut0/cambiar_nombre_equipo_ubuntu.md)
 * [Comandos en Linux para la gestión de archivos](apuntes/ut0/comandos_linux.md)
 
+### UT1 - DHCP
+
+* [Características de DHCP](apuntes/ut1/src-ut1-dhcp-apuntes-caracteristicas-dhcp.odt)
 
 

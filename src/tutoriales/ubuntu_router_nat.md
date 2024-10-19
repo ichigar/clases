@@ -37,7 +37,7 @@ sudo sysctl -p
 Configura `iptables` para realizar la traducción de direcciones de red (NAT) en la interfaz externa (`enp3s0`):
 
 ```bash
-sudo iptables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 ```
 
 Permitir el reenvío de tráfico desde la red interna hacia la externa:

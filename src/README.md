@@ -29,4 +29,8 @@
 
 * [Características de DHCP](apuntes/ut1/src-ut1-dhcp-apuntes-caracteristicas-dhcp.odt)
 
+### UT2 - DNS
+
+* [Tutorial comando dig](apuntes/ut2/src-ut2-tutorial_dig.md)
+
 

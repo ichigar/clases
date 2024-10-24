@@ -7,3 +7,8 @@
 * [Clasificación de las redes locales](apuntes/ut1/Clasificacion_redes_locales.pdf)
 * [Velocidad de transmisión de la información](apuntes/ut1/velocidad_transferencia_informacion.pdf)
 * [Arquitectura de redes](apuntes/ut1/rde-ut1-arquitectura_redes.pdf)
+
+## UT2
+### Recursos
+
+* [La comunicación](apuntes/ut2/capa_enlace_datos.pdf)

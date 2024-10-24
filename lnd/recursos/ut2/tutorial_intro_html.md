@@ -219,7 +219,7 @@ Es importante usar `UTF-8` por:
 - **Evitar errores de codificación**: Sin una declaración de codificación clara, los navegadores podrían interpretar incorrectamente los caracteres especiales (como acentos, ñ, o caracteres no latinos), lo que llevaría a la aparición de símbolos incorrectos o de codificación.
 - **Estándar moderno**: UTF-8 es el estándar más común en la web hoy en día. Garantiza que tu sitio funcione correctamente en una variedad de navegadores y plataformas.
 
-**HTML hasta este punto:**
+**HTML final:**
 ```html
 <!DOCTYPE html>
 <html>
@@ -246,40 +246,4 @@ Es importante usar `UTF-8` por:
 </html>
 ```
 
-#### Paso 7: Añadir Comentarios en HTML
-Los comentarios en HTML se utilizan para agregar notas o explicaciones que no se mostrarán en el navegador, pero que son útiles para los desarrolladores.
-- **Ejemplo de Comentario**:
-  ```html
-  <!-- Este es un comentario que explica la siguiente sección de código -->
-  ```
-
-**HTML hasta este punto:**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>PC Gaming de Alto Rendimiento</title>
-</head>
-<body>
-    <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
-    <a href="https://www.example.com">Más información sobre tarjetas gráficas</a>
-    <ol>
-        <li>Tarjeta gráfica potente</li>
-        <li>Procesador de alto rendimiento</li>
-        <li>Mínimo 16 GB de RAM</li>
-    </ol>
-    <ul>
-        <li>Almacenamiento SSD</li>
-        <li>Fuente de alimentación confiable</li>
-        <li>Refrigeración adecuada</li>
-    </ul>
-    <img src="tarjeta-grafica.jpg" alt="Imagen de una tarjeta gráfica para gaming">
-    <!-- Este es un comentario que explica la siguiente sección de código -->
-</body>
-</html>
-```
-
-¡Y eso es todo! Con estos pasos básicos, ya puedes comenzar a agregar contenido sobre un PC gaming de alto rendimiento a tu sitio web. Si necesitas más información, consulta la [página original](https://htmlforpeople.com/add-content-to-your-website/).
 

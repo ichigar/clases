@@ -32,9 +32,9 @@ Los títulos y párrafos son fundamentales para organizar el contenido.
   ```html
   <h1>Componentes Clave de un PC Gaming</h1>
   ```
-- **Párrafo**: Añade un párrafo de texto con la etiqueta `<p>`:
+- **Párrafo**: Añade párrafos de texto con la etiqueta `<p>`:
   ```html
-  <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+  <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
   ```
   Donde:
 
@@ -57,7 +57,8 @@ Los títulos y párrafos son fundamentales para organizar el contenido.
 </head>
 <body>
     <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+    <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
+    <p>Algunos de ellos son una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
 </body>
 </html>
 ```
@@ -86,7 +87,8 @@ Donde:
 </head>
 <body>
     <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+    <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
+    <p>Algunos de ellos son una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
     <a href="https://www.example.com">Más información sobre tarjetas gráficas</a>
 </body>
 </html>
@@ -138,7 +140,8 @@ En una lista no ordenada (`<ul>`), los elementos `<li>` aparecen con viñetas o 
 </head>
 <body>
     <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+    <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
+    <p>Algunos de ellos son una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
     <a href="https://www.example.com">Más información sobre tarjetas gráficas</a>
     <ol>
         <li>Tarjeta gráfica potente</li>
@@ -181,7 +184,8 @@ Donde:
 </head>
 <body>
     <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+    <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
+    <p>Algunos de ellos son una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
     <a href="https://www.example.com">Más información sobre tarjetas gráficas</a>
     <ol>
         <li>Tarjeta gráfica potente</li>
@@ -231,7 +235,8 @@ Es importante usar `UTF-8` por:
 </head>
 <body>
     <h1>Componentes Clave de un PC Gaming</h1>
-    <p>Un PC gaming de alto rendimiento requiere componentes potentes como una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
+    <p>Un PC gaming de alto rendimiento requiere componentes potentes</p>
+    <p>Algunos de ellos son una tarjeta gráfica dedicada, un procesador rápido y suficiente memoria RAM.</p>
     <a href="https://www.example.com">Más información sobre tarjetas gráficas</a>
     <ol>
         <li>Tarjeta gráfica potente</li>

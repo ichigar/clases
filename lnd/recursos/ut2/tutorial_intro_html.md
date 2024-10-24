@@ -170,7 +170,9 @@ Donde:
      - **alt**: Proporciona un texto alternativo que se muestra si la imagen no se puede cargar, o para accesibilidad.
      - **width** y **height**: Definen el ancho y alto de la imagen en píxeles. Ejemplo: `<img src="imagen.jpg" width="300" height="200">`.
      - **title**: Texto que aparece cuando el usuario pasa el cursor sobre la imagen.
+
 **HTML hasta este punto:**
+
 ```html
 <!DOCTYPE html>
 <html>

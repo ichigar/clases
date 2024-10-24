@@ -11,5 +11,8 @@
 
 ### UT2
 
+#### Recursos
+
 * [Presentación. Introducción a HTML]()
 * [Apuntes. Introducción a HTML](apuntes/ut2/intro_html.md)
+* [Tutorial creando web](recursos/ut2/tutorial_intro_html.md)

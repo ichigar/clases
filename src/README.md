@@ -36,6 +36,7 @@
 #### Recursos
 
 * [Simil con explicación de DNS comparando con una casa](recursos/ut2/simil_dns_casa.md)
+* [Mapa mental DNS](recursos/ut2/mapa_mental_dns.png)
 
 #### Apuntes
 

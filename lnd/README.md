@@ -15,5 +15,6 @@
 
 * [Presentación. Introducción a HTML]()
 * [Apuntes. Introducción a HTML](apuntes/ut2/intro_html.md)
-* [Tutorial creando mi primera web](recursos/ut2/tutorial_intro_html.md)
+* [Tutorial. Creando mi primera web](recursos/ut2/tutorial_intro_html.md)
 * [El complemento emmet](recursos/ut2/emmet.md)
+* [Tutorial. Tablas en HTML](recursos/ut2/tutorial_tablas_html.md)

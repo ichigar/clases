@@ -27,9 +27,17 @@
 
 ### UT1 - DHCP
 
+#### Apuntes
+
 * [Características de DHCP](apuntes/ut1/src-ut1-dhcp-apuntes-caracteristicas-dhcp.odt)
 
 ### UT2 - DNS
+
+#### Recursos
+
+* [Simil con explicación de DNS comparando con una casa](recursos/ut2/simil_dns_casa.md)
+
+#### Apuntes
 
 * [Tutorial comando dig](apuntes/ut2/src-ut2-tutorial_dig.md)
 

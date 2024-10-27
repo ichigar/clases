@@ -1,7 +1,8 @@
+<!--
 ---
 type: slide
 ---
-
+-->
 # LND
 ## Lenguajes de marcas y sistemas de gestión de información
 

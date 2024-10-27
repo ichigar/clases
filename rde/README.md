@@ -11,5 +11,5 @@
 ## UT2
 ### Recursos
 
-* [La capa de enlace de datps](apuntes/ut2/capa_enlace.pdf)
+* [La capa de enlace de datps](apuntes/ut2/rde-ut2-capa_enlace.pdf)
 * [Direccionamiento físico](apuntes/ut2/rde-ut2-direccionamiento_fisico.pdf)

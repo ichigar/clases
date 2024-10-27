@@ -1,6 +1,9 @@
 ---
 ---
 
+.wrapper{
+  width: 85%;
+}
 @import "{{ site.theme }}";
 hr {
     border: 0;
@@ -8,6 +11,3 @@ hr {
     background-color: #ccc;
     margin: 20px 0;
   }
-.wrapper{
-  width: 80%;
-}

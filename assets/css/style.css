@@ -7,3 +7,5 @@ hr {
 .wrapper{
   width: 80%;
 }
+
+@import "{{ site.theme }}";

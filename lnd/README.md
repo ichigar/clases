@@ -1,7 +1,5 @@
 # LND - Lenguajes de marcas y sistemas de gestión de información
 ## Recursos
-### Generales
-* [Acceso a Google Meet del módulo](https://meet.google.com/jif-ktju-wgq)
 
 ### UT1
 

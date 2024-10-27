@@ -1,12 +1,5 @@
 ---
 ---
-.wrapper{
-  width: 85%;
-}
+
 @import "{{ site.theme }}";
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #ccc;
-    margin: 20px 0;
-  }
+

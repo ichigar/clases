@@ -6,3 +6,6 @@
 * [Presentación inicial](https://hackmd.io/@ichigar/H1R-hN7TR)
 * [Archivo fuente de la presentación](recursos/ut1/archivo_fuente_presentacion_inicial.md.src)
 
+### UT2
+
+* [Tablas en HTML](recursos/ut2/tutorial_tablas_html.md)

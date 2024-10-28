@@ -75,49 +75,8 @@ Para hacer que los bordes sean visibles, se usa el atributo `border`. Se puede e
 
 ![](img/paso5.png)
 
-**6: Agregar un Encabezado Completo para la Tabla**
 
-Puedes añadir un título usando `<caption>`.
-
-```html
-<table border="1">
-  <caption>Especificaciones del Ordenador de Gaming</caption>
-  <tr>
-    <th>Componente</th>
-    <th>Especificación</th>
-  </tr>
-  <tr>
-    <td>Procesador</td>
-    <td>Intel Core i9-13900K</td>
-  </tr>
-  <tr>
-    <td>Tarjeta Gráfica</td>
-    <td>NVIDIA GeForce RTX 4090</td>
-  </tr>
-  <tr>
-    <td>Memoria RAM</td>
-    <td>32 GB DDR5</td>
-  </tr>
-  <tr>
-    <td>Almacenamiento</td>
-    <td>2 TB SSD NVMe</td>
-  </tr>
-  <tr>
-    <td>Fuente de Alimentación</td>
-    <td>850W 80 Plus Gold</td>
-  </tr>
-  <tr>
-    <td>Enfriamiento</td>
-    <td>Refrigeración Líquida AIO</td>
-  </tr>
-</table>
-```
-
-**Resultado:**
-
-![](img/paso6.png)
-
-**7: Combinar Columnas con `colspan`**
+**6: Combinar Columnas con `colspan`**
 
 El atributo `colspan` se utiliza para hacer que una celda abarque varias columnas. Esto es útil cuando quieres que un encabezado o dato se extienda sobre varias columnas.
 
@@ -143,7 +102,7 @@ El atributo `colspan` se utiliza para hacer que una celda abarque varias columna
 
 ![](img/paso7.png)
 
-**8: Combinar Filas con `rowspan`**
+**7: Combinar Filas con `rowspan`**
 
 El atributo `rowspan` se utiliza para hacer que una celda abarque varias filas. Esto es útil cuando quieres que un dato se extienda verticalmente sobre varias filas.
 
@@ -175,7 +134,7 @@ El atributo `rowspan` se utiliza para hacer que una celda abarque varias filas. 
 
 ![](img/paso8.png)
 
-**9: `rowspan` y `colspan` Combinados**
+**8: `rowspan` y `colspan` Combinados**
 
 A continuación se muestra un ejemplo donde se utilizan ambos atributos para una tabla con múltiples filas y columnas no expandidas.
 
@@ -261,6 +220,7 @@ Ejemplo:
 **Resultado:**
 
 ![](img/table_semantic.png)
+
 
 
 ### Atributos Adicionales para Etiquetas HTML de Tablas
@@ -356,7 +316,7 @@ Ejemplo:
     ```
 
 #### `<th>` y `<td>`
-  - `align`: Alinea el contenido de la celda horizontalmente (valores posibles: `left`, `right`, `center`).
+  - `align`: Alinea el contenido de la celda individual horizontalmente (valores posibles: `left`, `right`, `center`).
   
     ```html
     <table border="1">
@@ -399,9 +359,8 @@ Ejemplo:
       </tr>
     </table>
     ```
-
 #### `<caption>`
-  - `align`: Alinea el título de la tabla (valores posibles: `top`, `bottom`). *(Nota: Este atributo está obsoleto en HTML5 y se recomienda usar CSS para la alineación).*
+  - `align`: Ubica el título de la tabla al principio o al final de la misma (valores posibles: `top`, `bottom`). *(Nota: Este atributo está obsoleto en HTML5 y se recomienda usar CSS para la alineación).*
   
     ```html
     <table border="1">
@@ -455,3 +414,4 @@ Ejemplo:
 **Resultado**:
 
 ![](img/ejemplo_atributos.png)
+

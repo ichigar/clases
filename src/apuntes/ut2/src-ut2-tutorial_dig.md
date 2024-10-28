@@ -2,7 +2,7 @@
 
 La herramienta dig nos permite hacer consultas consultas para obtener cualquier registro que nos interese. Resulta muy útil para comprobar el correcto funcionamiento del servicio de . En su uso más simple solicitamos un registro de tipo A a nuestros resolvers que tenemos la configuración de red de nuestro equipo
 
-```
+```bash
 $ dig rediris.es                      
 
 ; <<>> DiG 9.18.28-0ubuntu0.24.04.1-Ubuntu <<>> rediris.es

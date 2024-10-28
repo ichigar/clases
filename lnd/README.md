@@ -8,5 +8,5 @@
 
 ### UT2
 
-* [Introducción a HTML](recursos/ut2/)
+* [Introducción a HTML](recursos/ut2/tutorial_intro_html.md)
 * [Tablas en HTML](recursos/ut2/tutorial_tablas_html.md)

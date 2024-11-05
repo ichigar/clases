@@ -18,3 +18,4 @@
 * [Direccionamiento físico](apuntes/ut2/rde-ut2-direccionamiento_fisico.pdf)
 * [Técnicas de acceso al medio](apuntes/ut2/rde-ut2-acceso_medio.pdf)
 * [Conmutación de tramas](apuntes/ut2/rde-ut2-conmutacion.pdf)
+* [Dominios de difusión y de colisión](apuntes/ut2/rde-ut2-dominios_colision_difusion.pdf)

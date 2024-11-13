@@ -135,7 +135,6 @@ Esta simulación muestra un flujo básico de trabajo colaborativo en GitHub util
 ## Anexo. Nombres de ramas en grupos de trabajo
 
 
-
 | **Tipo de Rama**             | **Convención de Nombres**           | **Descripción**                                                                                                                                                     | **Ejemplos**                    |
 |-----------------------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
 | **Rama Principal**          | `main` o `master`                   | Rama principal y estable del proyecto; generalmente contiene código listo para producción.                                                                         | `main`, `master`                |
@@ -146,7 +145,5 @@ Esta simulación muestra un flujo básico de trabajo colaborativo en GitHub util
 | **Rama de Pruebas**         | `release/nombre-de-la-version`      | Preparación de nuevas versiones; pruebas finales antes de fusionar en `main`.                                                                                       | `release/v1.0.0`, `release/2.1.5` |
 | **Rama Experimental**       | `experiment/nombre-del-experimento` | Para pruebas rápidas o ideas no listas para producción.                                                                                                            | `experiment/new-idea`, `experiment/test-feature` |
 | **Rama de Documentación**   | `docs/nombre-del-documento`         | Para actualizaciones o mejoras en la documentación del proyecto.                                                                                                   | `docs/api-update`, `docs/readme-enhancement` |
-
-
-
+| **Rama de Refactorización** | `refactor/nombre-del-refactor`      | Usada para reestructurar y mejorar el código o la organización de archivos sin cambiar su funcionalidad.                                                            | `refactor/project-structure`, `refactor/code-cleanup` |
 

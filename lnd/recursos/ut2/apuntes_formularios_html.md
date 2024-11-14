@@ -4,7 +4,7 @@
 
 ```html
 <form action="https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9" method="post">
-    <!-- Información básica -->
+    
     <fieldset>
         <legend>Información Básica</legend>
         <label for="nombreEquipo">Nombre del equipo:</label>
@@ -33,7 +33,6 @@
         <input type="url" id="website" name="website" placeholder="https://www.sitiodelteam.com">
     </fieldset>
 
-    <!-- Integrantes -->
     <fieldset>
         <legend>Integrantes</legend>
         <label for="numJugadores">Número de jugadores:</label>
@@ -44,7 +43,7 @@
         <input type="checkbox" id="capitan" name="capitan">
     </fieldset>
 
-    <!-- Preferencias de hardware -->
+
     <fieldset>
         <legend>Preferencias de Hardware</legend>
         <label for="procesador">Procesador preferido:</label>
@@ -63,14 +62,12 @@
         <output id="presupuestoOutput">2750</output>
     </fieldset>
 
-    <!-- Comentarios adicionales -->
     <fieldset>
         <legend>Comentarios Adicionales</legend>
         <label for="comentarios">Comentarios:</label><br>
         <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
     </fieldset>
 
-    <!-- Envío del formulario -->
     <br>
     <button type="submit">Registrar equipo</button>
     <button type="reset">Restablecer formulario</button>

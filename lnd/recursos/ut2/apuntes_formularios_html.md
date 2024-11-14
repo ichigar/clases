@@ -75,22 +75,26 @@
 ```
 ### Explicación de las etiquetas y atributos relacionados con los formularios
 
-#### `<form action="https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9" method="post">`
+#### `form`
 Define un formulario HTML. Los atributos son:
 - `action="https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9"`: URL a la que se enviarán los datos del formulario.
 - `method="post"`: Método HTTP usado para enviar los datos. En este caso, `post` se usa para enviar datos de forma segura.
 
-#### `<fieldset>`
+#### `fieldset`
 Etiqueta semámtica que Agrupa elementos relacionados dentro de un formulario para mejorar la legibilidad y organización.
 
-#### `<legend>`
+#### `legend`
 
 Proporciona un título para los elementos agrupados dentro del `<fieldset>`, describiendo el propósito del grupo de campos.
 
-#### `<label for="nombreEquipo">Nombre del equipo:</label>`
-Define un rótulo para el elemento con `id="nombreEquipo"`. El atributo `for` asocia el rótulo con el campo de entrada correspondiente. Esto permite que, al hacer clic en el rótulo, el cursor se posicione automáticamente en el campo de entrada asociado, mejorando así la accesibilidad y la experiencia del usuario.
+#### `label`
 
-#### `<input type="text" id="nombreEquipo" name="nombreEquipo" required maxlength="100" placeholder="Nombre del equipo de gaming">`
+Define un rótulo para el campo siguiente. 
+El atributo:
+- `for` asocia el rótulo con el campo de entrada correspondiente. Esto permite que, al hacer clic en el rótulo, el cursor se posicione automáticamente en el campo de entrada asociado, mejorando así la accesibilidad y la experiencia del usuario.
+
+#### `<input type="text">`
+
 Define un campo de entrada de texto. Atributos:
 - `type="text"`: Especifica que el campo es para ingresar texto.
 - `id="nombreEquipo"`: Identificador único para este campo.
@@ -99,49 +103,71 @@ Define un campo de entrada de texto. Atributos:
 - `maxlength="100"`: Longitud máxima del texto permitido.
 - `placeholder="Nombre del equipo de gaming"`: Texto sugerido que aparece en el campo antes de que el usuario ingrese datos.
 
-#### `<input type="date" id="fechaRegistro" name="fechaRegistro" required>`
-Campo de entrada para fechas. `type="date"` crea un selector de fechas. `required` indica que el campo es obligatorio.
+#### `<input type="date">`
 
-#### `<select id="categoria" name="categoria" required>`
+Campo de entrada para fechas. `type="date"` crea un selector de fechas. 
+
+Atributo:
+
+- `required` indica que el campo es obligatorio. Sale mensaje de error al enviar el formulario si lo hemos dejado en blanco.
+
+#### `select`
+
 Elemento para seleccionar una opción de una lista predefinida. Atributos:
 - `id` y `name` funcionan igual que en los campos `<input>`.
 - `required`: Indica que este campo es obligatorio.
 
-#### `<option value="...">`
-Define las opciones dentro del `<select>`. El atributo `value` especifica el valor que se enviará si se selecciona esa opción.
+#### `option`
+Define las opciones dentro del `<select>`. 
 
-#### `<input type="email" id="emailContacto" name="emailContacto" required placeholder="ejemplo@correo.com">`
-Campo para ingresar un correo electrónico. `type="email"` requiere un formato válido de correo electrónico. `placeholder` proporciona un ejemplo de entrada.
+El atributo:
 
-#### `<input type="url" id="website" name="website" placeholder="https://www.sitiodelteam.com">`
-Campo de entrada para una URL. `type="url"` requiere un formato válido de URL.
+- `value` especifica el valor que se enviará si se selecciona esa opción.
 
-#### `<input type="number" id="numJugadores" name="numJugadores" min="1" max="10" step="1" required>`
+#### `<input type="email">`
+
+Campo para ingresar un correo electrónico. 
+
+El atributo:
+
+- `placeholder` proporciona un ejemplo de entrada.
+
+#### `<input type="url">`
+
+Campo de entrada para una URL.
+
+#### `<input type="number">`
+
 Campo para ingresar un número. Atributos:
 - `min="1"`: Valor mínimo permitido.
 - `max="10"`: Valor máximo permitido.
 - `step="1"`: Incremento o decremento permitido.
-- `required`: Campo obligatorio.
 
-#### `<input type="checkbox" id="capitan" name="capitan">`
-Define una casilla de verificación. `type="checkbox"` permite al usuario marcar o desmarcar el campo.
 
-#### `<input type="radio" id="mecanico" name="teclado" value="Mecánico">`
-Campo de opción única. `type="radio"` permite al usuario elegir una opción dentro de un grupo de opciones con el mismo `name`. El atributo `value` indica el valor que se enviará al seleccionar la opción.
+#### `<input type="checkbox">`
 
-#### `<input type="range" id="presupuesto" name="presupuesto" min="500" max="5000" step="100">`
+Define una casilla de verificación. Permite al usuario marcar o desmarcar el campo.
+
+#### `<input type="radio">`
+Campo de opción única. Permite al usuario elegir una opción dentro de un grupo de opciones con el mismo `name`. El atributo `value` indica el valor que se enviará al seleccionar la opción.
+
+#### `<input type="range">`
+
 Campo para seleccionar un valor dentro de un rango. Atributos:
 - `min` y `max` definen el rango de valores permitidos.
 - `step` define los incrementos del rango.
 
-#### `<textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>`
+#### `textarea`
+
 Área de texto para ingresar varias líneas. Atributos:
 - `rows` y `cols` definen el tamaño del área de texto.
 - `placeholder` muestra un texto sugerido antes de que el usuario ingrese datos.
 
-#### `<button type="submit">Registrar equipo</button>`
-Botón para enviar el formulario. `type="submit"` hace que los datos del formulario se envíen a la URL especificada en `action`.
+#### `<button type="submit">`
 
-#### `<button type="reset">Restablecer formulario</button>`
-Botón para restablecer todos los campos del formulario a sus valores iniciales. `type="reset"` permite limpiar todos los campos del formulario.
+Botón para enviar el formulario. Hace que los datos del formulario se envíen a la URL especificada en el atributo `action` de la etiqueta `form`.
+
+#### `<button type="reset">`
+
+Botón para restablecer todos los campos del formulario a sus valores iniciales. Permite limpiar todos los campos del formulario.
 

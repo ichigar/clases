@@ -77,7 +77,7 @@
 
 #### `form`
 Define un formulario HTML. Los atributos son:
-- `action="https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9"`: URL a la que se enviarán los datos del formulario.
+- `action` URL a la que se enviarán los datos del formulario. Si el valor de action es `https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9`, los datos del formulario se enviarán a esa URL cuando el usuario presione el botón de enviar (submit). **Webhook.site** es una herramienta onnline que permite recibir y ver peticiones HTTP (como las que genera un formulario HTML). En este caso, cuando envías el formulario con `action="https://webhook.site/723ffee6-5e54-434f-afdc-2fc4f4c1efc9"`, los datos del formulario serán enviados como una solicitud HTTP a esa URL específica, y podrás verlos en la interfaz de **Webhook.site**. Es útil para depurar, probar integraciones y ver la estructura de los datos que envía un formulario.
 - `method="post"`: Método HTTP usado para enviar los datos. En este caso, `post` se usa para enviar datos de forma segura.
 
 #### `fieldset`

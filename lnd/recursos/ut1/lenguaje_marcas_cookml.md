@@ -7,7 +7,7 @@
 ## Descripción
 
 Este lenguaje de marcas se utilizará para codificar un recetario de cocina. 
-* * El recetario contiene recetas individuales
+* El recetario contiene recetas individuales
 * Cada receta debe tener
   * título
   * metadatos (descripción general de la misma)

@@ -1,4 +1,3 @@
-@@ -0,0 +1,161 @@ 
 # Lenguaje de marcas de recetario de cocina
 ## Especificaciones del lenguaje de marcas:
 * Nombre: **RecetarioML**

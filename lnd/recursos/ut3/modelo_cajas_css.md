@@ -52,6 +52,8 @@ El **modelo de cajas en CSS** (CSS Box Model) es el concepto fundamental que des
 
 ![](imgs/modelo-de-cajas.png)
 
+![](imgs/3d_box_model.png)
+
 
 ## Tipos de modelos de cajas 
 Hay dos modelos principales:

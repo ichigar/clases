@@ -153,4 +153,3 @@ Cuando abres el código en un navegador, notarás que:
 1. La caja con `content-box` es más grande porque el padding y el borde se agregan al tamaño total.
 2. La caja con `border-box` respeta el tamaño total especificado, ajustando el espacio interno.
 
-¿Te gustaría una captura de pantalla del resultado o más detalles? 😊

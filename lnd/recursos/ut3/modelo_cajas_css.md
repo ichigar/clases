@@ -27,7 +27,7 @@ El **modelo de cajas en CSS** (CSS Box Model) es el concepto fundamental que des
 - Ejemplo:
 
      ```css
-     border: 2px solid black; /* Borde negro de 2px de grosor */
+     border: 2px solid black; /* Borde 2px de grosor, estilo de linea continuo, color negro */
      ```
 
 

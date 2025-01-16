@@ -1,6 +1,8 @@
 # Modelo de cajas en css
 
-El **modelo de cajas en CSS** (CSS Box Model) es el concepto fundamental que describe cómo los elementos HTML se **representan** y **estructuran en la página web**. Cada elemento se trata como una caja rectangular compuesta por las siguientes capas, desde adentro hacia afuera:
+El **modelo de cajas en CSS** (CSS Box Model) es el concepto fundamental que describe cómo los elementos HTML se **representan** y **estructuran en la página web**. Cada elemento se trata como una caja rectangular compuesta por las siguientes capas, desde fuera hacia dentro:
+
+![](imgs/3d_box_model.png)
 
 ## 1. Content (Contenido)
 
@@ -51,8 +53,6 @@ El **modelo de cajas en CSS** (CSS Box Model) es el concepto fundamental que des
 ## Diagrama de la caja 
 
 ![](imgs/modelo-de-cajas.png)
-
-![](imgs/3d_box_model.png)
 
 
 ## Tipos de modelos de cajas 

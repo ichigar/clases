@@ -163,12 +163,12 @@ De forma global aplicamos a todos los elementos los siguientes estilos:
 }
 ```
 Con ello conseguimos que:
-* Los elementos de bloque como `<h1>`, `<p>`, `<div>`, `<ul>`,...a los que cada navegador suele aplicar márgenes predeterminados tengan por defecto margen y separación `0` con lo que conseguimos tener más control sobre el diseño y reducir las diferencias visuales entre navegadores.
+* Los elementos de bloque como `<h1>`, `<p>`, `<div>`, `<ul>`,...a los que cada navegador suele aplicar márgenes predeterminados tengan por defecto margen y separación `0` con lo que tenemos más control sobre el diseño y reducir las diferencias visuales entre navegadores.
 * Poner por defecto `box-sizing: border-box;` facilita no tener que ajustar los tamaños de los bloques manualmente y nos aseguramos que los anchos de `border`, `padding` y contenido se ajustan al asignado al bloque.
 
 El resto de modificaciones consisten en
 * Poner `padding` y `margin` a algunos bloques para mejorar la distribución visual de los elementos.
-* Se alinea verticalmente arriba el panel lateral..
+* Se alinea verticalmente arriba el panel lateral.
 * Se centran algunos textos.
 
 ## Maquetando la barra de navegación
@@ -282,7 +282,7 @@ Para ello vamos a utilizar los **media queries** son una característica de CSS 
 
 En este caso vamos a modificar los estilos de algunos elementos para el caso de que el ancho de pantalla sea menor de un valor de `768px`
 
-Añadimos a los estilos actuales los siguientes:
+**Añadimos** a los estilos actuales los siguientes:
 
 ```css
 @media (max-width: 768px) {
@@ -313,6 +313,8 @@ El resultado al estrechar la pantalla debe ser similar a:
 ![](imgs/ejemplo_maquetados_responsive.png)
 
 ### Explicación
+
+Con lo que hemos añadido, para pantallas de ancho reducido se hacen las siguientes modificaciones:
 
 * Todos los elementos que tienen `display` a `inline-block` en un ancho de pantalla grande pasan a `block` para que se muestren apilados uno encima de otro.
 * El contenido y el panel lateral ocupan ahora el ancho completo de la pantalla. 
@@ -505,7 +507,7 @@ Está versión completa la anterior añadiendo el menú de hamburguesa en el mod
 No se explica con mucho detalle porque este código va más allá de los contenidos del módulo. De forma general, los cambios que se han aplicado son:
 
 * El menú de hamburguesa se muestra en la barra de navegación solo para anchos de pantalla reducidos. Y consiste en un simple caracter `☰` con el tamaño adecuado.
-* Al pasar el cursos por encima de la hamburguesa este se convierte en una mano.
+* Al pasar el cursor por encima de la hamburguesa este se convierte en una mano.
 * Al hacer click en la hamburguesa se despliega el menú. Al volver a hacer click se oculta.
 * El bloque del menú de navegación se mete dentro de otro bloque para permitir ocultarlo/mostrarlo en modo responsive
 * Se añade javscript que añade/elimina clase en el menú de navegación que hace que el bloque con los enlaces se muestre o se oculte.

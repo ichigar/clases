@@ -1,4 +1,4 @@
-# Maquetación en css
+# Maquetación en css. Maquetación básica.
 
 La **maquetación** en CSS es el proceso de **organizar** y **estructurar** los elementos de una página web para que se dispongan visualmente sw forma **coherente, atractiva y funcional**. 
 
@@ -55,7 +55,7 @@ Como norma general es el valor del `display` por defecto de todos los elementos 
 
 2. Modelo de cajas
    - Respeta **padding**, **margin**, y **border**.
-   - Sin embargo, el **padding** y **border** no afectan la disposición de otros elementos. Por ejemplo, el espacio generado por `padding` no empuja a otros elementos hacia abajo.
+   - Sin embargo, el **padding** y **border** no afectan la disposición de los otros elementos con los que está en línea. Por ejemplo, el espacio generado por `padding` no empuja a otros elementos hacia abajo.
 
 3. Flujo del documento
    - Permanece en el flujo normal del contenido, es decir, no interrumpe la alineación ni crea bloques.
@@ -66,9 +66,28 @@ Como norma general es el valor del `display` por defecto de todos los elementos 
      - `<span>`, `<a>`, `<strong>`, `<em>`, `<b>`, `<i>`, `<u>`.
 
 5. Estilo visual
-   - Los elementos `inline` están diseñados principalmente para estilizar texto o contenido pequeño que forma parte de una línea de texto.
+   - Los elementos `inline` están diseñados principalmente para estilizar **texto o contenido pequeño** que forma parte de una línea de texto.
 
-#### Ejemplos
+### `block`
+
+El valor **`block`** de la propiedad `display` hace que un elemento se comporte como un **bloque** en el flujo del documento. Este es el comportamiento predeterminado de muchos elementos HTML, como `<div>`, `<p>`, `<section>`, `<article>`, entre otros.
+
+#### Características principales de `block`
+
+1. Los elementos se apilan uno encima de otros (en vertical) y siempre comienzan en una nueva línea
+
+2. Por defecto ocupan todo el ancho (en horizontal)disponible.
+
+3. Ancho y alto son configurables. Si usan `width` (ancho) y `height` (alto) se aplica al tamaño del elemento.
+
+
+#### Elementos predeterminados con `display: block`
+Algunos ejemplos de elementos que tienen `display: block` por defecto:
+- **Elementos estructurales `<div>`, `<section>`, `<header>`, `<footer>`, `<article>`, `<aside>`, `<main>`.
+- **Elementos de texto y contenido `<p>`, `<h1>` a `<h6>`, `<ul>`, `<ol>`, `<li>`.
+- **Elementos multimedia `<figure>`, `<figcaption>`.
+
+#### Ejemplo 1
 
 Como hemos visto, todos los elementos `<span>` se comportan como elementos en línea (inline), mientras que los elementos `<div>` por defecto se comportan como elementos en **bloque** (lo explicaremos en el siguiente apartado):
 
@@ -117,26 +136,7 @@ span {
 
 Aahora, tanto `<div>` como `<span>` se comportan de la misma forma: como un elemento en línea.
 
-### `block`
-
-El valor **`block`** de la propiedad `display` hace que un elemento se comporte como un **bloque** en el flujo del documento. Este es el comportamiento predeterminado de muchos elementos HTML, como `<div>`, `<p>`, `<section>`, `<article>`, entre otros.
-
-#### Características principales de `block`
-
-1. Los elementos se apilan uno encima de otros (en vertical) y siempre comienzan en una nueva línea
-
-2. Por defecto ocupan todo el ancho (en horizontal)disponible.
-
-3. Ancho y alto configurables. Si usa,ps `width` (ancho) y `height` (alto) se aplica al tamño del elemento.
-
-
-#### Elementos predeterminados con `display: block`
-Algunos ejemplos de elementos que tienen `display: block` por defecto:
-- **Elementos estructurales `<div>`, `<section>`, `<header>`, `<footer>`, `<article>`, `<aside>`, `<main>`.
-- **Elementos de texto y contenido `<p>`, `<h1>` a `<h6>`, `<ul>`, `<ol>`, `<li>`.
-- **Elementos multimedia `<figure>`, `<figcaption>`.
-
-#### Ejemplo
+#### Ejemplo 2
 
 ```html
 <!DOCTYPE html>

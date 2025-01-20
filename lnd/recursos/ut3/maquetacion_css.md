@@ -237,3 +237,55 @@ El valor `inline-block` nos puede venir muy bien cuando necesitamos una mezcla d
 ### `none`
 
 Mediante el valor especial none podemos indicar a la propiedad display que el navegador no debe renderizar (dibujar) el elemento ni sus hijos y, aunque exista en el HTML, no se mostrará.
+
+## `media-query`
+
+Los **media queries** son una **característica de CSS** que permite aplicar estilos específicos a una página web según ciertas condiciones, como:
+* El tamaño de la pantalla
+* La resolución
+* La orientación del dispositivo
+* El tipo de dispositivo. 
+
+Son una herramienta clave para crear [diseños responsivos](https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable).
+
+### Cómo Funcionan los Media Queries
+
+Un media query evalúa las características del dispositivo o del entorno en el que se visualiza la página y aplica los estilos CSS correspondientes si se cumplen las condiciones definidas.
+
+Sintaxis básica:
+
+```css
+@media (condición) {
+    /* Reglas CSS aplicadas si la condición se cumple */
+}
+```
+
+### Ejemplo 
+
+Adaptar el Diseño a Diferentes Tamaños de Pantalla
+
+```css
+/* Estilo general para todos los dispositivos */
+body {
+    font-size: 16px;
+}
+
+/* Estilos específicos para pantallas menores a 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Estilos específicos para pantallas mayores a 1200px */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+}
+```
+En este ejemplo:
+
+* Por defecto: font-size es 16px.
+* Pantallas pequeñas (< 768px): Se reduce a 14px.
+* Pantallas grandes (> 1200px): Se aumenta a 18px.

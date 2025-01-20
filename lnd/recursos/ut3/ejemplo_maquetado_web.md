@@ -43,10 +43,10 @@ El HTML de dicha página es el siguiente:
     <p>© 2025 Mi Página Web. Todos los derechos reservados.</p>
 </div>
 ```
- Y su apariencia inicial:
+ Y su apariencia antes de aplicar ningún estilo:
 
  ![](imgs/ejemplo_maquetados_html_inicial.png)
- 
+
 ### Explicación
 
 La web está compuesta de 4 "cajas principales":
@@ -56,6 +56,14 @@ La web está compuesta de 4 "cajas principales":
   * `sidebar`: para el panel lateral.
   * `content`: para el contenido principal de la web.
 * `footer`: para el pié de página.
+
+Observa también que por defecto el navegador aplica estilos de forma predeterminada a los diferentes elementos:
+
+* Tipo de fuente 
+* Tamaño de la fuente.
+* Márgenes y separaciones.
+* Subrayado y color a los enlaces.
+* Viñeta en las listas no numeradas.
 
 ## Dando estructura al documento con css
 

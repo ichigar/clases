@@ -95,5 +95,68 @@ El resultado debe ser similar al siguiente:
 Para mejorar la disposición de los elementos añadimos/modificamos lo siguiente a la hoja de estilos:
 
 ```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.banner,
+.navbar,
+.container,
+.sidebar,
+.content,
+.footer {
+  border: 1px solid black;
+}
+.banner {
+  padding: 20px 0;
+  text-align: center;
+}
+.navbar {
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  margin: 20px;
+}
+.sidebar,
+.content {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+}
+.sidebar {
+  width: 25%;
+}
+.content {
+  width: 70%;
+}
+.footer {
+  padding: 10px;
+  text-align: center;
+}
 ```
+El resultado debe ser:
+
+![](imgs/ejemplo_maquetados_nejora_disposicion.png)
+
+### Explicación
+
+De forma global aplicamos a todos los elementos los siguientes estilos:
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+Con ello conseguimos que:
+* Los elementos de bloque como `<h1>`, `<p>`, `<div>`, `<ul>`,...a los que cada navegador suele aplicar márgenes predeterminados tengan por defecto margen y separación `0` con lo que conseguimos tener más control sobre el diseño y reducir las diferencias visuales entre navegadores.
+* Poner por defecto `box-sizing: border-box;` facilita no tener que ajustar los tamaños de los bloques manualmente y nos aseguramos que los anchos de `border`, `padding` y contenido se ajustan al asignado al bloque.
+
+El resto de modificaciones consisten en
+* Poner `padding` y `margin` a algunos bloques para mejorar la distribución visual de los elementos.
+* Se alinea verticalmente arriba el panel lateral..
+* Se centran algunos textos. 
 

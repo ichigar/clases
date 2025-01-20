@@ -238,7 +238,7 @@ El valor `inline-block` nos puede venir muy bien cuando necesitamos una mezcla d
 
 Mediante el valor especial none podemos indicar a la propiedad display que el navegador no debe renderizar (dibujar) el elemento ni sus hijos y, aunque exista en el HTML, no se mostrará.
 
-## `media-query`
+## Media queries
 
 Los **media queries** son una **característica de CSS** que permite aplicar estilos específicos a una página web según ciertas condiciones, como:
 * El tamaño de la pantalla

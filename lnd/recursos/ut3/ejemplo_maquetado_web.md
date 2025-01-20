@@ -43,7 +43,10 @@ El HTML de dicha página es el siguiente:
     <p>© 2025 Mi Página Web. Todos los derechos reservados.</p>
 </div>
 ```
+ Y su apariencia inicial:
 
+ ![](imgs/ejemplo_maquetados_html_inicial.png)
+ 
 ### Explicación
 
 La web está compuesta de 4 "cajas principales":

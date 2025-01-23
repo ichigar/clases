@@ -321,7 +321,155 @@ Con lo que hemos añadido, para pantallas de ancho reducido se hacen las siguien
 * Se cambian algunos márgenes y separaciones para disminuir la separación de algunos elementos.
 * Se centra el texto del panel lateral y se eliminan las viñetas de la lista.
 
-## Añadiendo menú tipo hamburguesa para la barra de navegación
+El código completo de la página hasta este punto es:
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+
+    .banner {
+      padding: 20px 0;
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .navbar {
+      padding: 10px;
+      text-align: center;
+      background-color: #333;
+    }
+
+    .navbar a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      margin: 20px;
+    }
+
+    .sidebar,
+    .content {
+      display: inline-block;
+      vertical-align: top;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 25%;
+      background-color: #f4f4f4;
+      border-right: 2px solid #ddd;
+    }
+
+    .content {
+      width: 70%;
+    }
+
+    .footer {
+      padding: 10px;
+      text-align: center;
+      background-color: #333;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .navbar a {
+        display: block;
+        padding: 10px;
+      }
+
+      .sidebar,
+      .content {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+
+      .sidebar {
+        text-align: center;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+      }
+
+      .content {
+        margin-top: 10px;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.navbar-menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</head>
+
+<body>
+  <div class="banner">
+    <h1>Mi Página Web</h1>
+    <p>Bienvenidos a mi sitio web</p>
+  </div>
+
+  <div class="navbar">
+    <a href="#">Inicio</a>
+    <a href="#">Servicios</a>
+    <a href="#">Acerca de</a>
+    <a href="#">Contacto</a>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h3>Panel Lateral</h3>
+      <ul>
+        <li><a href="#">Enlace 1</a></li>
+        <li><a href="#">Enlace 2</a></li>
+        <li><a href="#">Enlace 3</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2>Bloque de Contenido</h2>
+      <p>Aquí va el contenido principal de la página. Puedes incluir texto, imágenes, tablas o cualquier otro tipo de
+        información.</p>
+      <p>Ejemplo de párrafo adicional para ilustrar el diseño del bloque principal.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Mi Página Web. Todos los derechos reservados.</p>
+  </div>
+</body>
+
+</html>
+```
+
+## Complementario. Añadiendo menú tipo hamburguesa para la barra de navegación
 
 Está versión completa la anterior añadiendo el menú de hamburguesa en el modo de pantalla de dispositivo móvil:
 

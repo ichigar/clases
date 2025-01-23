@@ -422,12 +422,6 @@ El código completo de la página hasta este punto es:
       }
     }
   </style>
-  <script>
-    function toggleMenu() {
-      const menu = document.querySelector('.navbar-menu');
-      menu.classList.toggle('active');
-    }
-  </script>
 </head>
 
 <body>

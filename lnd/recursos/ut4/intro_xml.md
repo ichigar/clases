@@ -185,6 +185,120 @@ Los comentarios se utilizan para agregar notas en el documento que no serán pro
 
 ## Reglas documento XML bien formado
 
+Un documento XML se considera **bien formado** cuando cumple con las reglas sintácticas definidas por la especificación de XML. Estas reglas garantizan que el documento sea legible y procesable por cualquier parser XML compatible. A continuación, se describen las principales características que debe cumplir un documento XML bien formado:
+
+### 1. Una única etiqueta raíz
+- Todo el contenido del documento debe estar contenido dentro de un único elemento raíz.
+- **Ejemplo correcto:**
+  ```xml
+  <catalogo>
+      <producto>
+          <nombre>Televisor</nombre>
+      </producto>
+  </catalogo>
+  ```
+- **Ejemplo incorrecto (sin única raíz):**
+  ```xml
+  <producto>
+      <nombre>Televisor</nombre>
+  </producto>
+  <producto>
+      <nombre>Licuadora</nombre>
+  </producto>
+  ```
+
+
+### 2. Todas las etiquetas deben estar correctamente cerradas
+- Cada etiqueta de apertura debe tener una etiqueta de cierre correspondiente.
+- **Ejemplo correcto:**
+  ```xml
+  <nombre>Televisor</nombre>
+  ```
+- **Ejemplo incorrecto (etiqueta sin cerrar):**
+  ```xml
+  <nombre>Televisor
+  ```
+
+
+### 3. Las etiquetas deben estar correctamente anidadas
+- Las etiquetas deben abrirse y cerrarse en el orden correcto, respetando la jerarquía.
+- **Ejemplo correcto:**
+  ```xml
+  <producto>
+      <nombre>Televisor</nombre>
+      <precio>450.00</precio>
+  </producto>
+  ```
+- **Ejemplo incorrecto (etiquetas mal anidadas):**
+  ```xml
+  <producto>
+      <nombre>Televisor</precio>
+      <precio>450.00</nombre>
+  </producto>
+  ```
+
+
+### 4. Diferenciación entre mayúsculas y minúsculas
+- XML es sensible a las mayúsculas y minúsculas. Las etiquetas deben coincidir exactamente en su apertura y cierre.
+- **Ejemplo correcto:**
+  ```xml
+  <Nombre>Televisor</Nombre>
+  ```
+- **Ejemplo incorrecto (diferencia en mayúsculas/minúsculas):**
+  ```xml
+  <Nombre>Televisor</nombre>
+  ```
+
+
+### 5. Los atributos deben estar correctamente formateados
+- Los atributos de los elementos deben:
+  - Usar comillas (`"` o `'`) para delimitar los valores.
+  - No repetirse dentro de un mismo elemento.
+- **Ejemplo correcto:**
+  ```xml
+  <producto id="101" categoria="electrodomestico" />
+  ```
+- **Ejemplo incorrecto (falta de comillas):**
+  ```xml
+  <producto id=101 categoria=electrodomestico />
+  ```
+
+
+### 6. Caracteres especiales deben ser escapados
+- Algunos caracteres tienen un significado especial en XML y deben ser escapados si se utilizan como texto.
+- **Ejemplo correcto:**
+  ```xml
+  <descripcion>Televisor de 55 pulgadas &amp; alta definición.</descripcion>
+  ```
+- **Ejemplo incorrecto (sin escapar):**
+  ```xml
+  <descripcion>Televisor de 55 pulgadas & alta definición.</descripcion>
+  ```
+
+
+### 7. Declaración XML (opcional pero recomendada)
+- Aunque no es estrictamente necesaria, incluir la declaración XML al inicio del documento es una buena práctica.
+- **Ejemplo:**
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  ```
+
+---
+
+### 8. Prohibido el contenido fuera de la raíz
+- No debe haber texto o contenido fuera del elemento raíz.
+- **Ejemplo incorrecto:**
+  ```xml
+  Texto fuera de la raíz.
+  <catalogo>
+      <producto>
+          <nombre>Televisor</nombre>
+      </producto>
+  </catalogo>
+  ```
+
+
+
 ### Actividad 1
 
 El siguiente documento no cumple con las reglas de un documento XML bien formado.
@@ -192,17 +306,17 @@ El siguiente documento no cumple con las reglas de un documento XML bien formado
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <catalogo>
-    <producto>
+    <producto id=201>
         <Nombre>Televisor</nombre>
         <precio moneda="USD">450.00</precio>
         <descripcion>Televisor de alta definición de 55 pulgadas</descripcion>
     <producto>
-    <producto>
+    <producto id=202>
         <nombre>Licuadora</nombre>
         <precio moneda="USD">35.99</precio
         <descripcion>Licuadora de 10 velocidades.</descripcion>
     </producto>
-    <producto>
+    <producto id=203>
         <nombre>Refrigerador</nombre>
         <descripcion>Refrigerador de dos puertas.
     </producto>

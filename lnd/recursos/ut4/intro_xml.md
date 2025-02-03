@@ -328,3 +328,119 @@ b) Inserta a continuación el documento corregido:
 
 ```xml
 ```
+
+## Uso de Elementos vs. Atributos en XML
+
+En XML, no existen reglas estrictas sobre **cuándo usar atributos y cuándo usar elementos secundarios**. Los datos pueden almacenarse en cualquiera de estas dos formas.
+
+Observa estos ejemplos:
+
+```xml
+<person sex="female">
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person>
+```
+
+```xml
+<person>
+  <sex>female</sex>
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person>
+```
+
+En el primer ejemplo, **`sex` es un atributo**, mientras que en el segundo, **`sex` es un elemento secundario**. Ambos proporcionan la misma información.
+
+No hay reglas fijas sobre cuándo usar atributos o elementos secundarios, pero el criterio general es que en **XML es mejor evitarlos**. Aunque no en todos los casos.
+
+
+### Caso de ejemplo
+
+Los siguientes tres documentos XML contienen la misma información, pero con enfoques diferentes:
+
+* **Uso de un atributo para la fecha**:
+```xml
+<note date="12/11/2002">
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+```
+
+* **Uso de un elemento para la fecha**:
+```xml
+<note>
+  <date>12/11/2002</date>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+```
+
+* **Expansión del elemento fecha (opción recomenda)**:
+```xml
+<note>
+  <date>
+    <day>12</day>
+    <month>11</month>
+    <year>2002</year>
+  </date>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+```
+
+### Inconvenientes de usar atributos
+
+Existen algunos **problemas con el uso de atributos** en XML:
+
+- **No pueden contener múltiples valores** (los elementos secundarios sí pueden).
+- **No son fácilmente expandibles** en caso de futuras modificaciones.
+- **No pueden describir estructuras** (los elementos secundarios sí pueden).
+- **Son más difíciles de manipular con código**.
+- **No son fáciles de validar contra una DTD**.
+
+Pr tanto, el criterio general es que es mejor **usar elementos** para describir los datos y **atributos solo para información que no sea relevante a los datos**.
+
+Por ejemplo, este es un **mal uso de XML**:
+```xml
+<note day="12" month="11" year="2002"
+      to="Tove" from="Jani" heading="Reminder"
+      body="Don't forget me this weekend!">
+</note>
+```
+
+### La Excepción a la regla sobre los atributos
+
+Siempre hay excepciones. La regla sobre evitar atributos tiene una excepción: **cuando se trata de identificadores únicos (ID references)**.
+
+A veces, se le asignan **referencias ID a elementos**. Estas referencias permiten acceder a los elementos XML de manera similar a los atributos `NAME` o `ID` en HTML.
+
+Ejemplo:
+
+```xml
+<messages>
+  <note id="p501">
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+  </note>
+
+  <note id="p502">
+    <to>Jani</to>
+    <from>Tove</from>
+    <heading>Re: Reminder</heading>
+    <body>I will not!</body>
+  </note>
+</messages>
+```
+
+Aquí, el **ID no forma parte de los datos reales de la nota**, sino que es simplemente un identificador único.
+
+En conclusión, **los metadatos (datos sobre los datos) deben almacenarse como atributos, mientras que los datos reales deben almacenarse como elementos**.

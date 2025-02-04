@@ -334,6 +334,7 @@ No hay reglas fijas sobre cuándo usar atributos o elementos secundarios, pero e
 Los siguientes tres documentos XML contienen la misma información, pero con enfoques diferentes:
 
 * **Uso de un atributo para la fecha**:
+
 ```xml
 <note date="12/11/2002">
   <to>Tove</to>
@@ -344,6 +345,7 @@ Los siguientes tres documentos XML contienen la misma información, pero con enf
 ```
 
 * **Uso de un elemento para la fecha**:
+
 ```xml
 <note>
   <date>12/11/2002</date>
@@ -355,6 +357,7 @@ Los siguientes tres documentos XML contienen la misma información, pero con enf
 ```
 
 * **Expansión del elemento fecha (opción recomenda)**:
+
 ```xml
 <note>
   <date>

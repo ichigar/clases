@@ -303,36 +303,6 @@ También podemos usar herramientas online, como por ejemplo <https://codebeautif
 
 Visual Studio Code valida que un fichero XML esté bien formado utilizando la extensión `XML Tools`
 
-### Actividad 1
-
-El siguiente documento no cumple con las reglas de un documento XML bien formado.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<catalogo>
-    <producto id=201>
-        <Nombre>Televisor</nombre>
-        <precio moneda="USD">450.00</precio>
-        <descripcion>Televisor de alta definición de 55 pulgadas</descripcion>
-    <producto>
-    <producto id=202>
-        <nombre>Licuadora</nombre>
-        <precio moneda="USD">35.99</precio
-        <descripcion>Licuadora de 10 velocidades.</descripcion>
-    </producto>
-    <producto id=203>
-        <nombre>Refrigerador</nombre>
-        <descripcion>Refrigerador de dos puertas.
-    </producto>
-```
-
-a) Localiza los errores y descríbelos:
-
-b) Inserta a continuación el documento corregido:
-
-```xml
-```
-
 ## Uso de Elementos vs. Atributos en XML
 
 En XML, no existen reglas estrictas sobre **cuándo usar atributos y cuándo usar elementos secundarios**. Los datos pueden almacenarse en cualquiera de estas dos formas.

@@ -283,8 +283,6 @@ Un documento XML se considera **bien formado** cuando cumple con las reglas sint
   <?xml version="1.0" encoding="UTF-8"?>
   ```
 
----
-
 ### 8. Prohibido el contenido fuera de la raíz
 - No debe haber texto o contenido fuera del elemento raíz.
 - **Ejemplo incorrecto:**
@@ -297,7 +295,13 @@ Un documento XML se considera **bien formado** cuando cumple con las reglas sint
   </catalogo>
   ```
 
+### Herramientas de validación
 
+Existen diferentes herramientas para comprobar si un documento XML está bien formado. Entre ellas podemos usar cualquier navegador web. Si abrimos el documento en el mismo nos mostrará los errores si está mal formado. 
+
+También podemos usar herramientas online, como por ejemplo <https://codebeautify.org/xmlvalidator>
+
+Visual Studio Code valida que un fichero XML esté bien formado utilizando la extensión `XML Tools`
 
 ### Actividad 1
 

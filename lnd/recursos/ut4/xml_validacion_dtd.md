@@ -222,37 +222,40 @@ Esto indica que el elemento `libro` debe tener un atributo `isbn` que debe ser d
 
 - **`CDATA`**: El atributo puede contener cualquier texto. puede ser obligatorio(#REQUIRED) o tener un valor por defecto (los veremos más adelante)
 
-```xml
-<!DOCTYPE biblioteca [
+  ```xml
+  <!DOCTYPE biblioteca [
     <!ELEMENT biblioteca (libro)>
     <!ELEMENT libro (#PCDATA)>
     <!ATTLIST libro titulo CDATA #REQUIRED>
-]>
-<biblioteca>
+  ]>
+  <biblioteca>
     <libro titulo="El Quijote"/>
-</biblioteca>
-```
+  </biblioteca>
+  ```
 
 - **`ID`**: Identificador único dentro del documento. No puede haber otra etiqueta que tenga el mismo valor en dicho atributo. Solo puede contener letras, números y algunos caracteres especiales (-, _, .).
 
-```xml
-<!DOCTYPE biblioteca [
+  ```xml
+  <!DOCTYPE biblioteca [
     <!ELEMENT biblioteca (libro)>
     <!ELEMENT libro (#PCDATA)>
     <!ATTLIST libro id ID #REQUIRED>
-]>
-<biblioteca>
+  ]>
+  <biblioteca>
     <libro id="L001"/>
     <libro id="L002"/>
-</biblioteca>
-```
+  </biblioteca>
+  ```
 
 Otros atributos que podemos utilizar son:
 
 - `IDREF`: Referencia a un identificador.
 - `NMTOKEN`: Cadena de texto que puede contener letras, números y guiones.
 
-### Valor por defecto de un atributo
+
+### Tipos de valores de atributos en DTD
+
+* Valor por defecto de un atributo (CDATA)
 
 En **DTD**, se puede definir un **valor por defecto** para un atributo en la declaración `<!ATTLIST>` utilizando la siguiente sintaxis:
 
@@ -277,7 +280,7 @@ Si tienes un elemento `<libro>` con un atributo `disponible` que, por defecto, e
 
 El atributo `disponible="sí"` se **asume automáticamente** si no se especifica en el XML.
 
-Si el usuario especifica el atributo en el XML, **se usa el valor proporcionado** y no se aplica el valor por defecto:
+Si el usuario especifica el atributo en el XML, **se usa el valor proporcionado**, el valor por defecto se sobreescribe y no se aplica el valor por defecto:
 
 ```xml
 <biblioteca>
@@ -287,8 +290,6 @@ Si el usuario especifica el atributo en el XML, **se usa el valor proporcionado*
 
 En este caso el valor `"no"` sobrescribe el valor por defecto `"sí"`.
 
-
-### Tipos de valores de atributos en DTD
 
 | **Tipo de Valor** | **Significado** |
 |-------------------|----------------|

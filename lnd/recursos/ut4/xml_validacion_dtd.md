@@ -210,17 +210,9 @@ Los atributos permiten describir información adicional sobre los elementos. Los
 <!ATTLIST nombre_del_elemento atributo tipo_de_atributo valor>
 ```
 
-Ejemplo:
-
-```xml
-<!ATTLIST libro isbn CDATA #REQUIRED>
-```
-
-Esto indica que el elemento `libro` debe tener un atributo `isbn` que debe ser de tipo `CDATA` (texto normal) y es **requerido**. 
-
 ### Tipos de Atributos
 
-- **`CDATA`**: El atributo puede contener cualquier texto. puede ser obligatorio(#REQUIRED) o tener un valor por defecto (los veremos más adelante)
+- **`CDATA`**: El atributo puede contener cualquier texto. 
 
   ```xml
   <!DOCTYPE biblioteca [
@@ -247,7 +239,7 @@ Esto indica que el elemento `libro` debe tener un atributo `isbn` que debe ser d
   </biblioteca>
   ```
 
-Otros atributos que podemos utilizar son:
+Otros atributos que no vamos a ver con detalle, pero que podemos utilizar son:
 
 - `IDREF`: Referencia a un identificador.
 - `NMTOKEN`: Cadena de texto que puede contener letras, números y guiones.
@@ -255,7 +247,7 @@ Otros atributos que podemos utilizar son:
 
 ### Tipos de valores de atributos en DTD
 
-* Valor por defecto de un atributo (CDATA)
+#### Valor por defecto de un atributo (CDATA)
 
 En **DTD**, se puede definir un **valor por defecto** para un atributo en la declaración `<!ATTLIST>` utilizando la siguiente sintaxis:
 
@@ -290,10 +282,12 @@ Si el usuario especifica el atributo en el XML, **se usa el valor proporcionado*
 
 En este caso el valor `"no"` sobrescribe el valor por defecto `"sí"`.
 
+#### Valores requeridos, opcionales y fijos
 
-| **Tipo de Valor** | **Significado** |
+Al definir las características de un atributo utilizando DTD le podemos asignar modificadores que empiezan por **#** que permiten indicar si el valor es requerido, opcional o que no puede ser modificado.
+
+| **Tipo de modificador** | **Significado** |
 |-------------------|----------------|
-| `"valor"`        | Valor por defecto si no se proporciona en el XML. |
 | `#REQUIRED`      | **Obligatorio**: El XML será inválido si falta el atributo. |
 | `#IMPLIED`       | **Opcional sin valor por defecto**: Puede omitirse sin problemas. |
 | `#FIXED "valor"` | **Valor fijo**: No se puede cambiar en el XML. |
@@ -322,7 +316,7 @@ Ejemplo XML válido con esta definición:
 ```
 
 **Explicación:**
-- **`isbn` es obligatorio**, por lo que **debe** estar presente.
+- **`isbn` es obligatorio**, por lo que **debe** estar presente siempre como atributo en el elemento `libro`.
 - **`disponible` se asume `"sí"`** si no se especifica.
 - **`editorial` es opcional**, así que puede faltar sin errores.
 - **`formato="digital"` no puede cambiarse**, aunque no se escriba en el XML.

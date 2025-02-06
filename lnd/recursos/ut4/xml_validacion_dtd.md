@@ -86,7 +86,7 @@ Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro d
 
 
 
-* **Elementos con otros elementos**: Se pueden definir elementos dentro de otros elementos. Sirven para definir la estructura que debe tener el documento:
+* **Elementos con otros elementos**: Se pueden definir elementos dentro de otros elementos. Sirven para definir la estructura que debe tener el documento. Además, los elementos deben aparecer en el orden especificado en el documento XML:
 
    ```xml
    <!ELEMENT libro (titulo, autor, fecha)>
@@ -134,13 +134,6 @@ Ejemplo inválido. Hay más de una opción dentro de `<transporte>`:
 ```
   Esto indica que el elemento <telefono> puede aparecer 0 o 1 vez (es opcional), mientras que nombre debe aparecer obligatoriamente.
 
-* **Agrupación de elementos**: Se puede usar `()` para agrupar varios elementos.
-
-   ```xml
-   <!ELEMENT carta (remitente, destinatario, mensaje)>
-   ```
-
-   Esto indica que el elemento `carta` debe contener los tres elementos **en el orden especificado**. Si queremos que los elementos puedan aparecer en cualquier orden es engorroso hacerlo utilizando DTD. Veremos como hacerlo utilizando **XSD** en lugar de DTD.
 
 ### Ejemplo Completo con los Diferentes Operadores:
 

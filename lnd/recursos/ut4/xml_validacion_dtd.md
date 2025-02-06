@@ -58,6 +58,15 @@ Archivo `nota.dtd`:
 
 En este caso, el archivo `nota.dtd` define la estructura de `nota.xml`.
 
+## Proceso de validación
+
+Una vez definido el DTD que debe cumplir un determinado documento XML debemos poder realizar el proceso de validación. Para ello existen múltiples tipos de herramientas como:
+
+- Utilizando la herramienta de línea de comandos `xmllint`
+- Con el plugin **XML by Red Hat** en VSCode u otros complementos para diferentes IDE.
+- Herrramientas online, como por ejemplo <https://www.truugo.com/xml_validator/>
+- Con programas que usen **librerias** específicas de XML en diferentes lenguajes de programación como **Python**, **PHP** o **Java**
+
 ## Elementos en un DTD
 
 Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro del documento. La declaración de un elemento tiene la siguiente forma:
@@ -85,14 +94,36 @@ Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro d
   Este ejemplo indica que el elemento no debería tener contenido. Debería ser de la forma: `<imagen/>`.
 
 
-
 * **Elementos con otros elementos**: Se pueden definir elementos dentro de otros elementos. Sirven para definir la estructura que debe tener el documento. Además, los elementos deben aparecer en el orden especificado en el documento XML:
 
-   ```xml
-   <!ELEMENT libro (titulo, autor, fecha)>
-   ```
+Ejemplo en DTD:
 
-   En este caso, el elemento `libro` debe contener los elementos `titulo`, `autor` y `fecha` en ese orden.
+  ```xml
+  <!ELEMENT direccion (calle, ciudad, codigoPostal)>
+  <!ELEMENT calle (#PCDATA)>
+  <!ELEMENT ciudad (#PCDATA)>
+  <!ELEMENT codigoPostal (#PCDATA)>
+  ````
+
+Ejemplo de XML válido:
+
+  ```xml
+  <direccion>
+    <calle>Av. Reforma 100</calle>
+    <ciudad>Ciudad de México</ciudad>
+    <codigoPostal>01000</codigoPostal>
+  </direccion>
+  ```
+
+Ejemplo de XML inválido. El orden es incorrecto:
+
+  ```xml
+  <direccion>
+    <codigoPostal>01000</codigoPostal>
+    <calle>Av. Reforma 100</calle>
+    <ciudad>Ciudad de México</ciudad>
+  </direccion>
+  ```
 
 * **Elección de elementos**: Se puede usar el operador `|` para indicar elementos alternativos.
 

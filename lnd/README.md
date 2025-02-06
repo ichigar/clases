@@ -25,3 +25,4 @@
 ### UT4
 
 * [Introducción a XML](recursos/ut4/intro_xml.md)
+* [Validación de XML con DTD](recursos/ut4/xml_validacion_dtd.md)

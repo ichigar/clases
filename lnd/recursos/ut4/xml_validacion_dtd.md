@@ -76,7 +76,17 @@ Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro d
 
    Este ejemplo indica que el elemento `nombre` debe contener texto.
 
-* **Elementos hijos**: Se pueden definir elementos dentro de otros elementos.
+* **Elementos vacíos** (EMPTY): Para elementos sin contenido (autocerrados en XML). Son útiles si queremos que el elemento únicamente tenga atributos, pero no contenido:
+
+```xml
+<!ELEMENT imagen EMPTY>
+```
+
+  Este ejemplo indica que el elemento no debería tener contenido. Debería ser de la forma: `<imagen/>`.
+
+
+
+* **Elementos con otros elementos**: Se pueden definir elementos dentro de otros elementos. Sirven para definir la estructura que debe tener el documento:
 
    ```xml
    <!ELEMENT libro (titulo, autor, fecha)>
@@ -86,11 +96,28 @@ Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro d
 
 * **Elección de elementos**: Se puede usar el operador `|` para indicar elementos alternativos.
 
-   ```xml
-   <!ELEMENT producto (nombre | descripcion)>
-   ```
+  ```xml
+  <!ELEMENT transporte (auto | bicicleta | avion)>
+  <!ELEMENT auto (#PCDATA)>
+  <!ELEMENT bicicleta (#PCDATA)>
+  <!ELEMENT avion (#PCDATA)>
+  ```
 
-   Esto significa que el elemento `producto` puede contener o `nombre` o `descripcion`, pero no ambos.
+Ejemplo XML válido:
+
+```xml
+<transporte>
+    <bicicleta>Mountain Bike</bicicleta>
+</transporte>
+```
+Ejemplo inválido. Hay más de una opción dentro de `<transporte>`:
+
+```xml
+<transporte>
+    <auto>Ford</auto>
+    <avion>Boeing</avion>
+</transporte>
+```
 
 * **Repitición de elementos**: Se puede usar el operador `*` (cero o más) o `+` (uno o más) para definir la cantidad de repeticiones de un elemento.
 

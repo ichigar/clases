@@ -96,7 +96,7 @@ Un DTD describe qué elementos son permitidos y cómo deben organizarse dentro d
 
 * **Elementos con otros elementos**: Se pueden definir elementos dentro de otros elementos. Sirven para definir la estructura que debe tener el documento. Además, los elementos deben aparecer en el orden especificado en el documento XML:
 
-Ejemplo en DTD:
+  Ejemplo en DTD:
 
   ```xml
   <!ELEMENT direccion (calle, ciudad, codigoPostal)>
@@ -105,7 +105,7 @@ Ejemplo en DTD:
   <!ELEMENT codigoPostal (#PCDATA)>
   ````
 
-Ejemplo de XML válido:
+  Ejemplo de XML válido:
 
   ```xml
   <direccion>
@@ -115,7 +115,7 @@ Ejemplo de XML válido:
   </direccion>
   ```
 
-Ejemplo de XML inválido. El orden es incorrecto:
+  Ejemplo de XML inválido. El orden es incorrecto:
 
   ```xml
   <direccion>
@@ -134,21 +134,22 @@ Ejemplo de XML inválido. El orden es incorrecto:
   <!ELEMENT avion (#PCDATA)>
   ```
 
-Ejemplo XML válido:
+  Ejemplo XML válido:
 
-```xml
-<transporte>
-    <bicicleta>Mountain Bike</bicicleta>
-</transporte>
-```
-Ejemplo inválido. Hay más de una opción dentro de `<transporte>`:
+  ```xml
+  <transporte>
+      <bicicleta>Mountain Bike</bicicleta>
+  </transporte>
+  ```
+ 
+  Ejemplo inválido. Hay más de una opción dentro de `<transporte>`:
 
-```xml
-<transporte>
+  ```xml
+  <transporte>
     <auto>Ford</auto>
     <avion>Boeing</avion>
-</transporte>
-```
+  </transporte>
+  ```
 
 * **Repitición de elementos**: Se puede usar el operador `*` (cero o más) o `+` (uno o más) para definir la cantidad de repeticiones de un elemento.
 
@@ -160,9 +161,9 @@ Ejemplo inválido. Hay más de una opción dentro de `<transporte>`:
 
 * **Elementos opcionales**: Se usa `?` para indicar que un elemento es opcional.
 
-```xml
-<!ELEMENT persona (nombre, telefono?)>
-```
+  ```xml
+  <!ELEMENT persona (nombre, telefono?)>
+  ```
   Esto indica que el elemento <telefono> puede aparecer 0 o 1 vez (es opcional), mientras que nombre debe aparecer obligatoriamente.
 
 

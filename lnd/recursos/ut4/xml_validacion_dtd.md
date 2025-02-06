@@ -297,7 +297,7 @@ Al definir las características de un atributo utilizando DTD le podemos asignar
 
 ```xml
 <!DOCTYPE biblioteca [
-    <!ELEMENT biblioteca (libro)>
+    <!ELEMENT biblioteca (libro+)>
     <!ELEMENT libro (#PCDATA)>
     <!ATTLIST libro disponible CDATA "sí">   <!-- Valor por defecto -->
     <!ATTLIST libro isbn CDATA #REQUIRED>    <!-- Obligatorio -->

@@ -64,6 +64,7 @@ Una vez definido el DTD que debe cumplir un determinado documento XML debemos po
 
 - Utilizando la herramienta de línea de comandos `xmllint`
 - Con el plugin **XML by Red Hat** en VSCode u otros complementos para diferentes IDE.
+- Utilizando editores específicos de XML como, por ejemplo [XML Cop`y Editor](https://xml-copy-editor.sourceforge.io/).
 - Herrramientas online, como por ejemplo <https://www.truugo.com/xml_validator/>
 - Con programas que usen **librerias** específicas de XML en diferentes lenguajes de programación como **Python**, **PHP** o **Java**
 

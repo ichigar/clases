@@ -26,3 +26,4 @@
 
 * [Introducción a XML](recursos/ut4/intro_xml.md)
 * [Validación de XML con DTD](recursos/ut4/xml_validacion_dtd.md)
+* [Validación de XML con XSD](recursos/ut4/xml_validacion_xsd.md)

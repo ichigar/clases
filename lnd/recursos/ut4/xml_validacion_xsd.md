@@ -140,6 +140,164 @@ Ejemplo de un XML válido según este esquema
     <fechaNacimiento>1995-07-15</fechaNacimiento>
 </persona>
 ```
+## Restringiendo el valor de los elementos
+
+### **Especificación de Restricciones a Elementos Simples en XSD**
+En **XML Schema Definition (XSD)**, se pueden agregar **restricciones (facetas)** a los elementos simples utilizando el elemento `<xs:restriction>`. Esto permite definir reglas sobre **valores permitidos, longitudes, patrones, rangos numéricos**, etc.
+
+### Uso de `<xs:restriction>` dentro de `<xs:simpleType>`**
+El patrón general para restringir un tipo de dato en XSD se aplica sustituyendo la declaración de un elemento simple de la forma:
+
+```xml
+<xs:element name="nombre_elemento" type="xs:tipo"/>
+```
+Por: 
+
+```xml
+<xs:simpleType name="nombre_elemento">
+    <xs:restriction base="xs:tipo">
+        <!-- Restricciones aquí -->
+    </xs:restriction>
+</xs:simpleType>
+```
+Donde:
+- `base="xs:tipo"` indica el **tipo de dato original** del cual se parte.
+- Dentro de `<xs:restriction>`, se agregan las **restricciones específicas**.
+
+### Tipos de Restricciones Comunes
+Las restricciones más usadas en XSD incluyen:
+
+| Restricción | Descripción | Ejemplo |
+|-------------|------------|---------|
+| `xs:minLength` | Longitud mínima del valor (para `string`) | `minLength="3"` |
+| `xs:maxLength` | Longitud máxima del valor (para `string`) | `maxLength="10"` |
+| `xs:pattern` | Define un patrón mediante una **expresión regular** | `pattern="[A-Za-z]+"` |
+| `xs:enumeration` | Define una lista de **valores permitidos** | `enumeration="Hombre"` |
+| `xs:minInclusive` | Valor mínimo permitido (para números) | `minInclusive="18"` |
+| `xs:maxInclusive` | Valor máximo permitido (para números) | `maxInclusive="99"` |
+| `xs:minExclusive` | Debe ser **mayor** que el valor dado | `minExclusive="0"` |
+| `xs:maxExclusive` | Debe ser **menor** que el valor dado | `maxExclusive="100"` |
+
+
+### Ejemplos de Restricciones en XSD
+
+#### Ejemplo 1: Restricción de Longitud en un Nombre
+
+Solo permite nombres de 3 a 20 caracteres.
+```xml
+<xs:simpleType name="nombre">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="3"/>
+        <xs:maxLength value="20"/>
+    </xs:restriction>
+</xs:simpleType>
+```
+
+
+#### Ejemplo 2: Restricción de Edad (entre 18 y 65 años)
+```xml
+<xs:simpleType name="edad">
+    <xs:restriction base="xs:int">
+        <xs:minInclusive value="18"/>
+        <xs:maxInclusive value="65"/>
+    </xs:restriction>
+</xs:simpleType>
+```
+
+#### Ejemplo 3: Validar un Código Postal (solo 5 dígitos)
+```xml
+<xs:simpleType name="codigo_postal">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="\d{5}"/>
+    </xs:restriction>
+</xs:simpleType>
+```
+- `\d{5}` significa "exactamente 5 dígitos numéricos".
+
+
+#### Ejemplo 4: Lista de Géneros Permitidos
+Solo se permiten los valores `"Masculino"`, `"Femenino"` y `"Otro"`.
+```xml
+<xs:simpleType name="genero">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Masculino"/>
+        <xs:enumeration value="Femenino"/>
+        <xs:enumeration value="Otro"/>
+    </xs:restriction>
+</xs:simpleType>
+```
+
+
+#### Uso de los Tipos con Restricciones en un Esquema Completo**
+Aquí aplicamos las restricciones anteriores en un esquema **completo**:
+```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="nombre">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="edad">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="18"/>
+            <xs:maxInclusive value="65"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigo_postal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="genero">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Masculino"/>
+            <xs:enumeration value="Femenino"/>
+            <xs:enumeration value="Otro"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="persona">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type=""/>
+                <xs:element name="edad" type="EdadValida"/>
+                <xs:element name="codigoPostal" type="CodigoPostal"/>
+                <xs:element name="genero" type="Genero"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+```
+
+---
+
+## **5. Ejemplo de XML Válido según el Esquema**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+    <nombre>Juan</nombre>
+    <edad>25</edad>
+    <codigoPostal>28001</codigoPostal>
+    <genero>Masculino</genero>
+</persona>
+```
+✔ **Es válido porque:**
+- `nombre`: Tiene entre 3 y 20 caracteres.
+- `edad`: Está entre 18 y 65 años.
+- `codigoPostal`: Tiene 5 dígitos.
+- `genero`: Es uno de los valores permitidos.
+
+---
+
+### **Conclusión**
+En **XSD**, las restricciones en los elementos simples se definen usando `<xs:restriction>`, permitiendo **controlar los valores permitidos** en un documento XML. Esto asegura que los datos sean precisos, validados y conformes a un estándar. 🚀
+
 
 #### Sin completar a partir de aquí
 

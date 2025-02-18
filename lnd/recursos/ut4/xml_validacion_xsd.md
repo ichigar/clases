@@ -488,3 +488,115 @@ Ejemplos de XML válido:
 
 Explicación: Si no se especifica el atributo tipo, su valor por defecto será `"invitado"`.
 
+### Restricciones en el valor de los atributos
+
+En **XSD**, los atributos pueden tener restricciones para limitar sus valores. Estas restricciones se aplican mediante **tipos de datos simples** y `xs:restriction`. 
+
+#### 1. Restricción a valores específicos (`xs:enumeration`)
+
+Se usa `xs:enumeration` para definir un conjunto de valores permitidos.
+
+Ejemplo: Atributo `tipoUsuario` con valores específicos:
+
+```xml
+<xs:attribute name="tipoUsuario">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="admin"/>
+            <xs:enumeration value="editor"/>
+            <xs:enumeration value="visitante"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+```
+
+Ejemplo XML válido:
+```xml
+<usuario tipoUsuario="admin"/>
+<usuario tipoUsuario="visitante"/>
+```
+
+Ejemplo XML inválido:
+```xml
+<usuario tipoUsuario="superadmin"/> 
+<!-- Error: "superadmin" no está en la lista de valores permitidos -->
+```
+
+#### 2. Restricción de longitud (`xs:minLength`, `xs:maxLength`)
+
+Se usa cuando un atributo debe tener una cantidad mínima y/o máxima de caracteres.
+
+Ejemplo: Atributo `codigo` con longitud entre 5 y 10 caracteres:
+```xml
+<xs:attribute name="codigo">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+```
+Ejemplo XML válido:
+
+```xml
+<producto codigo="ABC123"/>
+```
+Ejemplo XML inválido**
+
+```xml
+<producto codigo="AB"/>  
+<!-- Error: Solo tiene 2 caracteres, el mínimo es 5 -->
+```
+
+#### 3. Restricción de valores numéricos (`xs:minInclusive`, `xs:maxInclusive`)
+Se usa para definir un rango de valores numéricos.
+
+Ejemplo: Atributo `edad` entre 18 y 65 años
+
+```xml
+<xs:attribute name="edad">
+    <xs:simpleType>
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="18"/>
+            <xs:maxInclusive value="65"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+```
+Ejemplo XML válido
+
+```xml
+<persona edad="30"/>
+```
+Ejemplo XML inválido
+```xml
+<persona edad="16"/>  
+<!-- Error: 16 está fuera del rango permitido (18-65) -->
+```
+
+#### 4. Restricción de valores mediante patrones (`xs:pattern`)
+
+Se usa para validar el formato de un atributo mediante **expresiones regulares**.
+
+Ejemplo: Atributo `codigoPostal` con formato de 5 dígitos:
+```xml
+<xs:attribute name="codigoPostal">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+```
+
+Ejemplo XML válido
+```xml
+<direccion codigoPostal="28001"/>
+```
+
+Ejemplo XML inválido**
+```xml
+<direccion codigoPostal="A1234"/>  
+<!-- Error: No cumple con el patrón de solo números -->
+```

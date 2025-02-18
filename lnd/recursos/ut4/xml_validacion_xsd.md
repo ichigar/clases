@@ -43,7 +43,9 @@ Un archivo XSD tiene apariencia similar a la siguiente:
     </xs:element>
 </xs:schema>
 ```
-La declaración que aparece en la primera línea: `<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">` es el inicio de una definición de esquema XML (XSD, *XML Schema Definition*), que se usa para definir la estructura y las reglas de un documento XML. Explicación del contenido:
+La declaración que aparece en la primera línea: `<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">` es el inicio de una definición de esquema XML (XSD, *XML Schema Definition*), que se usa para definir la estructura y las reglas de un documento XML. 
+
+Explicación del contenido:
 
 - **`<xs:schema>`**  
    - Es el elemento raíz de un archivo XSD.
@@ -51,11 +53,13 @@ La declaración que aparece en la primera línea: `<xs:schema xmlns:xs="http://w
 
 - **`xmlns:xs="http://www.w3.org/2001/XMLSchema"`**  
   - **`xmlns`** significa "XML Namespace" (Espacio de Nombres en XML)
-    Se usa para evitar conflictos de nombres cuando se combinan diferentes vocabularios XML en un mismo documento. Define a qué esquema pertenecen los elementos y atributos en el documento.
-  - **`xs`**: es un prefijo asociado a este espacio de nombres. Al utilizar `xmlns:xs="http://www.w3.org/2001/XMLSchema"`, indicamos que el prefijo `**xs**` es un alias.
+    es una declaración de espacio de nombres XML. Aquí, `xmlns:xs` define un prefijo (`xs`) que se asocia con el espacio de nombres http://www.w3.org/2001/XMLSchema. Este espacio de nombres es estándar y se utiliza para definir elementos y tipos de datos en un esquema XML.
+  - **`xs`**: es un prefijo asociado a este espacio de nombres. Al utilizar `xmlns:xs="http://www.w3.org/2001/XMLSchema"`, indicamos que el prefijo **`xs`** es un alias.
   - **`http://www.w3.org/2001/XMLSchema`** es la URL del estándar XSD Es el espacio de nombres definido por el W3C para XML Schema. No es una URL que se vaya a descargar al validad, sino un identificador único del estándar.
 
-El resto de líneas del documento especifican la estructura y restricciones que debe cumplir un documento XML para ser validado con este esquema. Iremos viendo como crear las reglas. Para el ejemplo anterior, para que un documento XML sea válido según el esquema XSD debe cumplir con las siguientes características:
+Esta primera línea, básicamente establece que estamos definiendo un documento de validación XSD. El resto de líneas del documento especifican la estructura y restricciones que debe cumplir un documento XML para ser validado con este esquema. 
+
+Para el ejemplo anterior, para que un documento XML sea válido según el esquema XSD debe cumplir con las siguientes características:
 
 - Debe tener un elemento raíz `<persona>`. El documento XML debe comenzar con un único elemento <persona>.
 - Debe contener los elementos `<nombre>` y `<edad>` dentro de `<persona>`

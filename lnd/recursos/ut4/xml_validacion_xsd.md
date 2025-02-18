@@ -32,6 +32,7 @@ XML Schema Definition (XSD) es un lenguaje basado en XML que se utiliza para def
 Un archivo XSD tiene apariencia similar a la siguiente:
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="persona">
         <xs:complexType>
@@ -43,7 +44,7 @@ Un archivo XSD tiene apariencia similar a la siguiente:
     </xs:element>
 </xs:schema>
 ```
-La declaración que aparece en la primera línea: `<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">` es el inicio de una definición de esquema XML (XSD, *XML Schema Definition*), que se usa para definir la estructura y las reglas de un documento XML. 
+La declaración que aparece en la segunda línea: `<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">` es el inicio de una definición de esquema XML (XSD, *XML Schema Definition*), que se usa para definir la estructura y las reglas de un documento XML. 
 
 Explicación del contenido:
 
@@ -61,7 +62,8 @@ Esta primera línea, básicamente establece que estamos definiendo un documento 
 
 Para el ejemplo anterior, para que un documento XML sea válido según el esquema XSD debe cumplir con las siguientes características:
 
-- Debe tener un elemento raíz `<persona>`. El documento XML debe comenzar con un único elemento <persona>.
+- Debe tener un elemento raíz `<persona>`. El documento XML debe comenzar con un único elemento `<persona>`.
+- `<xs:complexType` indica que se va a definir un tipo de datos complejo. Un tipo de datos complejo es un tipo que puede contener otros elementos y atributos, a diferencia de los tipos de datos simples que solo contienen texto.
 - Debe contener los elementos `<nombre>` y `<edad>` dentro de `<persona>`
 - `<nombre>` debe ser de tipo **xs:string** (texto).
 - `<edad>` debe ser de tipo **xs:int** (entero, sin decimales).
@@ -104,12 +106,13 @@ Con el mismo tipo de herramientas que utilizamos para el esquema DTD podemos val
 
 ## Definiendo elementos en XSD
 
-A la hora de definir elementos utilizando XSD debemos especificar su nombre y si es simple o complejo (Definidos mediante combinaciones de elementos y atributos). Para los tipos de datos simples debemos especificar que tipos de datos pueden almacenar. 
+A la hora de definir elementos utilizando XSD debemos especificar su **nombre** y si es simple o complejo (Definidos mediante combinaciones de elementos y atributos). Para los tipos de datos simples debemos especificar que tipos de datos pueden almacenar. 
 
 los tipos de datos definen qué valores pueden contener los elementos y atributos de un documento. XSD define una variedad de tipos de datos. Los más habituales son: `xs:string`, `xs:int`, `xs:decimal`, `xs:boolean`, `xs:date`, `xs:time`, etc.
 
 Ejemplo:
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="persona">
         <xs:complexType>
@@ -143,6 +146,141 @@ Ejemplo de un XML válido según este esquema
     <altura>1.68</altura>
     <fechaNacimiento>1995-07-15</fechaNacimiento>
 </persona>
+```
+
+Si queremos definir que los elementos contenidos en un tipo complejo pueden aparecer en cualquier orden se utiliza `xs:all` en lugar de `xs:sequence`. Para el ejemplo anterior, si queremos indicar que los elementos contenidos en `<persona>` pueden aparecer en cualquier orden lo hacemos de la forma:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="persona">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="edad" type="xs:int"/>
+                <xs:element name="altura" type="xs:decimal"/>
+                <xs:element name="fechaNacimiento" type="xs:date"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+```
+Para la definición anterior, el siguiente documento sería válido:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+    <edad>30</edad>
+    <nombre>Juan Pérez</nombre>
+    <fechaNacimiento>1993-05-12</fechaNacimiento>
+    <altura>1.75</altura>
+</persona>
+```
+
+### Repetición de elementos
+
+Podemos indicar el número de veces que puede aparecer un elemento dentro de una secuencia utilizando los atributos `minOccurs` y `maxOccurs` en su definición.
+
+- `minOccurs="0"` → Hace que el elemento sea opcional.
+- `maxOccurs="1"` → El elemento puede aparecer una sola vez como máximo.
+- `minOccurs="1"` → El elemento debe aparecer al menos una vez.
+- `maxOccurs="unbounded"` → El elemento puede repetirse un número ilimitado de veces.
+
+#### Elementos opcionales
+
+Indicamos que un elemento puede o no aparecer con `minOccurs="0"` y `maxOccurs="1"`.
+
+```xml
+<xs:element name="telefono" type="xs:string" minOccurs="0" maxOccurs="1"/>
+```
+
+Significa que el elemento `telefono` es opcional y puede aparecer como máximo 1 vez. Equivale al uso de `?` en el esquema de validación **DTD**.
+
+
+Ejemplo XML válido:
+
+```xml
+<telefono>123456789</telefono>
+```
+
+
+#### Permitir que un elemento se repita varias veces
+
+Podemos especificar un rango de ocurrencias.
+
+Ejemplo: minOccurs="1" y maxOccurs="5" (Debe aparecer al menos una vez, pero no más de cinco)
+
+```xml
+<xs:element name="telefono" type="xs:string" minOccurs="1" maxOccurs="5"/>
+```
+Ejemplos XML válidos:
+
+```xml
+<telefono>123456789</telefono>
+```
+
+```xml
+<telefono>123456789</telefono>
+<telefono>987654321</telefono>
+<telefono>555555555</telefono>
+```
+
+Ejemplo XML no válido (más de 5 elementos):
+
+```xml
+<telefono>123456789</telefono>
+<telefono>987654321</telefono>
+<telefono>555555555</telefono>
+<telefono>666666666</telefono>
+<telefono>777777777</telefono>
+<telefono>888888888</telefono>  <!-- Error: Se permite un máximo de 5 -->
+```
+
+#### Permitir un número ilimitado de repeticiones
+
+Si queremos permitir cualquier número de elementos, usamos `maxOccurs="unbounded"`.
+
+Ejemplo: `minOccurs="0"` y `maxOccurs="unbounded"` (Cero o más veces)
+
+```xml
+<xs:element name="telefono" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+```
+
+### Nombres alternativos de elementos en XSD. `xs:choice`
+
+En **XSD (XML Schema Definition)**, podemos indicar que un elemento puede tener un **nombre alternativo** usando `xs:choice` (Múltiples nombres para un mismo tipo)
+
+Ejemplo: Un elemento que puede llamarse `telefono` o `movil`:
+
+
+```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="contacto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element name="telefono" type="xs:string"/>
+                    <xs:element name="movil" type="xs:string"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+```
+
+Ejemplo XML válido:
+
+```xml
+<contacto>
+    <telefono>123456789</telefono>
+</contacto>
+```
+```xml
+<contacto>
+    <movil>987654321</movil>
+</contacto>
 ```
 ## Restringiendo el valor de los elementos
 
@@ -183,95 +321,50 @@ Las restricciones más usadas en XSD incluyen:
 | `xs:maxExclusive` | Debe ser **menor** que el valor dado | `maxExclusive="100"` |
 
 
-### Ejemplos de Restricciones en XSD
+### Ejemplos de Restricciones de valores de elementos en XSD
 
-#### Ejemplo 1: Restricción de Longitud en un Nombre
-
-Solo permite nombres de 3 a 20 caracteres.
 ```xml
-<xs:simpleType name="nombre">
-    <xs:restriction base="xs:string">
-        <xs:minLength value="3"/>
-        <xs:maxLength value="20"/>
-    </xs:restriction>
-</xs:simpleType>
-```
-
-
-#### Ejemplo 2: Restricción de Edad (entre 18 y 65 años)
-```xml
-<xs:simpleType name="edad">
-    <xs:restriction base="xs:int">
-        <xs:minInclusive value="18"/>
-        <xs:maxInclusive value="65"/>
-    </xs:restriction>
-</xs:simpleType>
-```
-
-#### Ejemplo 3: Validar un Código Postal (solo 5 dígitos)
-```xml
-<xs:simpleType name="codigo_postal">
-    <xs:restriction base="xs:string">
-        <xs:pattern value="\d{5}"/>
-    </xs:restriction>
-</xs:simpleType>
-```
-- `\d{5}` significa "exactamente 5 dígitos numéricos".
-
-
-#### Ejemplo 4: Lista de Géneros Permitidos
-Solo se permiten los valores `"Masculino"`, `"Femenino"` y `"Otro"`.
-```xml
-<xs:simpleType name="genero">
-    <xs:restriction base="xs:string">
-        <xs:enumeration value="Masculino"/>
-        <xs:enumeration value="Femenino"/>
-        <xs:enumeration value="Otro"/>
-    </xs:restriction>
-</xs:simpleType>
-```
-
-
-#### Uso de los Tipos con Restricciones en un Esquema Completo**
-Aquí aplicamos las restricciones anteriores en un esquema **completo**:
-```xml
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-    <xs:simpleType name="nombre">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="3"/>
-            <xs:maxLength value="20"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="edad">
-        <xs:restriction base="xs:int">
-            <xs:minInclusive value="18"/>
-            <xs:maxInclusive value="65"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="codigo_postal">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\d{5}"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="genero">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Masculino"/>
-            <xs:enumeration value="Femenino"/>
-            <xs:enumeration value="Otro"/>
-        </xs:restriction>
-    </xs:simpleType>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:element name="persona">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nombre" type=""/>
-                <xs:element name="edad" type="EdadValida"/>
-                <xs:element name="codigoPostal" type="CodigoPostal"/>
-                <xs:element name="genero" type="Genero"/>
+                <xs:element name="nombre">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="3"/>
+                            <xs:maxLength value="20"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="edad">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="18"/>
+                            <xs:maxInclusive value="65"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="codigoPostal">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{5}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="genero">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Masculino"/>
+                            <xs:enumeration value="Femenino"/>
+                            <xs:enumeration value="Otro"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -279,9 +372,7 @@ Aquí aplicamos las restricciones anteriores en un esquema **completo**:
 </xs:schema>
 ```
 
----
-
-## **5. Ejemplo de XML Válido según el Esquema**
+### Ejemplo de XML Válido según el Esquema
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persona>
@@ -291,108 +382,109 @@ Aquí aplicamos las restricciones anteriores en un esquema **completo**:
     <genero>Masculino</genero>
 </persona>
 ```
-✔ **Es válido porque:**
+
+**Es válido porque:**
 - `nombre`: Tiene entre 3 y 20 caracteres.
 - `edad`: Está entre 18 y 65 años.
 - `codigoPostal`: Tiene 5 dígitos.
 - `genero`: Es uno de los valores permitidos.
 
----
+## Definición de atributos con XSD
 
-### **Conclusión**
-En **XSD**, las restricciones en los elementos simples se definen usando `<xs:restriction>`, permitiendo **controlar los valores permitidos** en un documento XML. Esto asegura que los datos sean precisos, validados y conformes a un estándar. 🚀
+Los atributos se definen con `xs:attribute` dentro de un `xs:complexType`, pero fuera de `xs:sequence`.
 
+Ejemplo de definición atributos dentro de un elemento
 
-#### Sin completar a partir de aquí
-
-## Estructuras en XSD
-- **Elementos Simples:** No contienen subelementos.
-- **Elementos Complejos:** Pueden contener otros elementos y atributos.
-- **Atributos:** Definen propiedades adicionales para los elementos.
-
-Ejemplo de un **elemento con atributos**:
-
-En este caso, el elemento `usuario` tiene un atributo `id`. Los atributos en XSD proporcionan información adicional sobre un elemento y pueden definirse con distintos tipos de datos y restricciones. En este ejemplo, el atributo `id` es de tipo `xs:int` y es obligatorio (`use="required"`). Esto significa que cualquier elemento `usuario` en el documento XML deberá incluir un identificador numérico para ser válido.
-```xml
-<xs:element name="usuario">
-    <xs:complexType>
-        <xs:attribute name="id" type="xs:int" use="required"/>
-    </xs:complexType>
-</xs:element>
-```
-
-## Ejemplos de XML y XSD
-
-A continuación, se presentan varios ejemplos de XML junto con sus correspondientes esquemas XSD.
-
-### Ejemplo 1: Información de una Persona
-**XML:**
-```xml
-<persona>
-    <nombre>Juan Pérez</nombre>
-    <edad>30</edad>
-    <correo>juan.perez@example.com</correo>
-</persona>
-```
-
-**XSD:**
 ```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="persona">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="nombre" type="xs:string"/>
-                <xs:element name="edad" type="xs:int"/>
-                <xs:element name="correo" type="xs:string"/>
             </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
 ```
 
-**Explicación:**
-Este esquema define un elemento `persona` que contiene tres subelementos: `nombre` (cadena de texto), `edad` (entero) y `correo` (cadena de texto). Cada elemento debe aparecer exactamente una vez y seguir los tipos de datos especificados.
+Ejemplo XML válido:
 
-### Ejemplo 2: Lista de Productos
-**XML:**
 ```xml
-<productos>
-    <producto id="101">
-        <nombre>Smartphone</nombre>
-        <precio>699.99</precio>
-    </producto>
-    <producto id="102">
-        <nombre>Tablet</nombre>
-        <precio>499.99</precio>
-    </producto>
-</productos>
+<persona id="123">
+    <nombre>Juan Pérez</nombre>
+</persona>
 ```
+Explicación:
+- El atributo `id` es de tipo `xs:int` y es obligatorio (`use="required"`).
+- El elemento `nombre` es un subelemento dentro de persona.
 
-**XSD:**
+### Definición de atributos opcionales
+
+Si el atributo no es obligatorio, se usa `use="optional"` (que es el valor por defecto si no se especifica).
+
+Ejemplo de definición de atributo opcional:
+
 ```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="productos">
+    <xs:element name="producto">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="producto" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="nombre" type="xs:string"/>
-                            <xs:element name="precio" type="xs:decimal"/>
-                        </xs:sequence>
-                        <xs:attribute name="id" type="xs:int" use="required"/>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="nombre" type="xs:string"/>
             </xs:sequence>
+            <xs:attribute name="codigo" type="xs:string" use="optional"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
 ```
 
-**Explicación:**
-Este esquema define una lista de productos donde cada `producto` tiene un atributo `id` obligatorio, un `nombre` como cadena de texto y un `precio` en formato decimal. El uso de `maxOccurs="unbounded"` permite incluir múltiples productos dentro del elemento `productos`.
+Ejemplo XML válido:
 
+```xml
+<producto>
+    <nombre>Televisor</nombre>
+</producto>
 
+También sería válido:
 
+```
+<producto codigo="ABC123">
+    <nombre>Computadora</nombre>
+</producto>
+```
 
+### Definición de atributos con valores predeterminados
+
+Se puede asignar un valor por defecto usando `default`.
+
+Ejemplo de definición de atributo con valor por defecto
+
+```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="usuario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="tipo" type="xs:string" default="invitado"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+```
+
+Ejemplos de XML válido:
+
+```xml
+<usuario>
+    <nombre>Ana</nombre>
+</usuario>
+```
+
+```xml
+<usuario tipo="admin">
+    <nombre>Pedro</nombre>
+</usuario>
+```
+
+Explicación: Si no se especifica el atributo tipo, su valor por defecto será `"invitado"`.
 

@@ -444,6 +444,7 @@ Ejemplo XML válido:
 <producto>
     <nombre>Televisor</nombre>
 </producto>
+```
 
 También sería válido:
 

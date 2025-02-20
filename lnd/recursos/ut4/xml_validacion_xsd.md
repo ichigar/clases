@@ -601,3 +601,25 @@ Ejemplo XML inválido**
 <direccion codigoPostal="A1234"/>  
 <!-- Error: No cumple con el patrón de solo números -->
 ```
+
+#### 5. Valor de atributo único
+
+Si queremos que el valor de un atribulo sea único (no se repita en otros elementos) le ponemos en el tipo del mismo `type="xs:ID"`.
+
+Ejemplo:
+
+```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="viviendas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vivienda" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+```

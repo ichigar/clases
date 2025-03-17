@@ -243,7 +243,12 @@ Los atributos permiten describir información adicional sobre los elementos. Los
 Otros atributos que no vamos a ver con detalle, pero que podemos utilizar son:
 
 - `IDREF`: Referencia a un identificador.
-- `NMTOKEN`: Cadena de texto que puede contener letras, números y guiones.
+- `NMTOKEN`: 
+  - Pueden contener cualquier combinación de letras (mayúsculas y minúsculas), dígitos (0-9) y los caracteres especiales `_`, `-`, `.` y `:`. 
+  - No puede comenzar con un número, el primer carácter de  NMTOKEN debe ser una letra o guion bajo
+  - No pueden contener espacios.
+
+Espacios no permitidos: Los NMTokens no pueden contener espacios en blanco.
 
 
 ### Tipos de valores de atributos en DTD
@@ -321,4 +326,14 @@ Ejemplo XML válido con esta definición:
 - **`disponible` se asume `"sí"`** si no se especifica.
 - **`editorial` es opcional**, así que puede faltar sin errores.
 - **`formato="digital"` no puede cambiarse**, aunque no se escriba en el XML.
+
+**Nota:** De forma opcional se pueden definir todos los atributos de un elemento en un único `ATTLIST`:
+
+```xml
+<!ATTLIST libro 
+      isbn CDATA #REQUIRED
+      editorial CDATA #IMPLIED
+      formato CDATA #FIXED "digital"
+>
+```
 

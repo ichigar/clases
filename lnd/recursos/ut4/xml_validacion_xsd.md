@@ -184,7 +184,7 @@ Para la definición anterior, el siguiente documento sería válido:
 Podemos indicar el número de veces que puede aparecer un elemento dentro de una secuencia utilizando los atributos `minOccurs` y `maxOccurs` en su definición.
 
 - `minOccurs="0"` → Hace que el elemento sea opcional.
-- `maxOccurs="1"` → El elemento puede aparecer una sola vez como máximo.
+- `maxOccurs="1"` → El elemento puede aparecer una sola vez como máximo. Si no se especifica, este es el valor que se aplica por defecto.
 - `minOccurs="1"` → El elemento debe aparecer al menos una vez.
 - `maxOccurs="unbounded"` → El elemento puede repetirse un número ilimitado de veces.
 

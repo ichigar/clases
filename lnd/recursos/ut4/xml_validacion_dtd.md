@@ -331,9 +331,9 @@ Ejemplo XML válido con esta definición:
 
 ```xml
 <!ATTLIST libro 
-      isbn CDATA #REQUIRED
-      editorial CDATA #IMPLIED
-      formato CDATA #FIXED "digital"
+    isbn CDATA #REQUIRED
+    editorial CDATA #IMPLIED
+    formato CDATA #FIXED "digital"
 >
 ```
 

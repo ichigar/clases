@@ -31,3 +31,7 @@
 ### UT5
 
 - [Introducción a la sindicación de contenidos](recursos/ut5/introduccion_sindicacion_contenidos.md)
+
+### UT6
+
+- [Introducción a JSON](recursos/ut6/introduccion_json.md)

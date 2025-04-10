@@ -35,3 +35,4 @@
 ### UT6
 
 - [Introducción a JSON](recursos/ut6/introduccion_json.md)
+- [Manipulando JSON con PHP](recursos/ut6/php_json.md)

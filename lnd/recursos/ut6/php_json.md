@@ -1,5 +1,29 @@
 # Usando PHP para acceder a JSON
 
+## ¿Qué es PHP?
+
+PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas.
+A diferencia del HTML, que solo muestra contenido, PHP piensa y decide qué mostrar antes de enviar el HTML al navegador.
+
+## Utilización
+
+PHP se escribe dentro de archivos con extensión `.phpp , y su código va entre estas etiquetas:
+
+```
+<?php
+  // Código PHP aquí
+?>
+```
+
+Puede integrarse dentro de HTML como esto:
+
+```php
+<h1>Bienvenido</h1>
+<p>Hoy es <?php echo date("d/m/Y"); ?></p>
+```
+
+Este ejemplo muestra la fecha actual automáticamente. El navegador recibe solo HTML, pero PHP genera ese HTML de forma dinámica antes.
+
 ## Mostrando json simple
 
 ```php

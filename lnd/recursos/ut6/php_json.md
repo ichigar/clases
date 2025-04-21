@@ -27,6 +27,9 @@ Para mostrar información generada en PHP dentro del HTML utilizamos la instrucc
   echo "¡Hola mundo!";
 ?>
 ```
+el resultado sería:
+
+![](img/saludo.png)
 
 Existe una forma más abreviada de usar `echo`. En PHP podemos sustituir `<? php echo` por `<?=`.
 
@@ -43,10 +46,12 @@ El resultado del PHP se genera en el momento de invocar la página en el navegad
 
 ```php
 <h1>Bienvenido</h1>
-<p>Hoy es <?php echo date("d/m/Y h:i:s"); ?></p>
+<p>La fecha y hora actual son <?php echo date("d/m/Y h:i:s"); ?></p>
 ```
 
-Este ejemplo muestra la fecha actual automáticamente. El navegador recibe solo HTML, pero PHP genera ese HTML de forma dinámica antes.
+Este ejemplo muestra la fecha y hora actual automáticamente. El navegador recibe solo HTML, pero PHP genera ese HTML de forma dinámica antes de enviarlo al navegador. El resultado sería:
+
+![](img/fecha_hora.png)
 
 ## Las variables
 
@@ -112,6 +117,8 @@ echo "<p>Ciudad: $ciudad</p>";
 
 PHP guarda la información y la usa para **rellenar la página automáticamente**.
 
+![](img/perfil.png)
+
 ## Las funciones
 
 Una **función** es como una **herramienta ya hecha** que puedes usar para que el lenguaje de programación haga algo por ti. En lugar de escribir todas las instrucciones paso a paso, usas una palabra clave, y PHP ya sabe qué hacer.
@@ -162,9 +169,15 @@ echo rand(1, 10); // Resultado: un número entre 1 y 10
 
 ## Usando PHP para mostrar json simple
 
+Para acceder a los elementos de un texto JSON los pasos que damos son:
+1. Almacenar en una variable el contenido del documento JSON.
+2. Utilizando la función de PHP `json_decode()` decodificamos como un objeto de PHP el documento JSON.
+3. Utilizando el operador `->` de PHP accedemos a los elementos del objeto decodificado para mostrarlos.
+
+**Ejemplo**:
+
 ```php
 <?php
-
 $json = '{
   "nombre": "Lecturas del Atlántico",
   "ciudad": "Las Palmas",
@@ -174,35 +187,38 @@ $json = '{
 }';
 
 // Decodificar como objeto
-$data = json_decode($json);
+$tienda = json_decode($json);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><?= $data->nombre ?></title>
+  <title><?= $tienda->nombre ?></title>
 </head>
 <body>
   <!-- Mostrar el objeto JSON formateado -->
   <h2>Contenido del JSON:</h2>
-  <pre><?= json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) ?></pre>
+  <pre><?= $json ?></pre>
   
-  <h1><?= $data->nombre ?></h1>
-  <p><strong>Ciudad:</strong> <?= $data->ciudad ?></p>
-  <p><strong>Teléfono:</strong> <?= $data->telefono ?></p>
-  <p><strong>Email:</strong> <?= $data->email ?></p>
-  <p><strong>Año de fundación:</strong> <?= $data->fundada ?></p>
+  <h1><?= $tienda->nombre ?></h1>
+  <p><strong>Ciudad:</strong> <?= $tienda->ciudad ?></p>
+  <p><strong>Teléfono:</strong> <?= $tienda->telefono ?></p>
+  <p><strong>Email:</strong> <?= $tienda->email ?></p>
+  <p><strong>Año de fundación:</strong> <?= $tienda->fundada ?></p>
 </body>
 </html>
 ```
+Resultado:
+
+![](img/libreria.png)
 
 ## Mostrando elementos de tipo booleano
 
 Para mostrar elementos de JSON cuyo tipo es booleano, esto es que su valor es `true` o `false` la forma más corta de hacerlo es usando el operador `? :` de PHP de la siguiente forma:
 
 ```php
-<?= $variable_json->elemento ? 'Texto para true' : 'Texto para false' ?>
+<?= $variable_json->elemento ? "Texto para true" : "Texto para false" ?>
 ```
 
 Por ejemplo si la variable **json** del apartado anterior la modificamos para que tenga el elemento `venta_online` de tipo booleano:
@@ -220,8 +236,12 @@ Por ejemplo si la variable **json** del apartado anterior la modificamos para qu
 Para mostrar este nuevo elemento lo podríamos hacer con el código:
 
 ```php
-<p><strong>Vende online:</strong> <?= $data->venta_online ? 'Sí' : 'No' ?></p>
+<p><strong>Vende online:</strong> <?= $tienda->venta_online ? "Sí" : "No" ?></p>
 ```
+
+Resultado:
+
+![](img/libreria_vende_online.png)
 ## Mostrando json con arrays. Los bucles.
 
 ### Bucles en PHP
@@ -272,33 +292,30 @@ $json = '{
 }';
 
 // Decodificar a objeto
-$data = json_decode($json);
+$tienda = json_decode($json);
 
 // Modificar el email
-$data->email = "contacto@nuevodominio.com";
+$tienda->email = "contacto@nuevodominio.com";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><?= $data->nombre ?></title>
+  <title><?= $tienda->nombre ?></title>
 </head>
 <body>
 
-  <h2>Contenido completo del objeto JSON:</h2>
-  <pre><?= json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) ?></pre>
-
-  <h1><?= $data->nombre ?></h1>
-  <p><strong>Ciudad:</strong> <?= $data->ciudad ?></p>
-  <p><strong>Teléfono:</strong> <?= $data->telefono ?></p>
-  <p><strong>Email:</strong> <?= $data->email ?></p>
-  <p><strong>Fundada en:</strong> <?= $data->fundada ?></p>
+  <h1><?= $tienda->nombre ?></h1>
+  <p><strong>Ciudad:</strong> <?= $tienda->ciudad ?></p>
+  <p><strong>Teléfono:</strong> <?= $tienda->telefono ?></p>
+  <p><strong>Email:</strong> <?= $tienda->email ?></p>
+  <p><strong>Fundada en:</strong> <?= $tienda->fundada ?></p>
 
   <h3>Categorías:</h3>
   <ul>
     <?php 
-    foreach ($data->categorias as $categoria){
+    foreach ($tienda->categorias as $categoria){
       echo "<li>$categoria</li>";
     }?>
   </ul>
@@ -307,12 +324,16 @@ $data->email = "contacto@nuevodominio.com";
 </html>
 ```
 
+El resultado sería:
+
+![](img/libreria_categorias.png)
+
 Si la parte en la que se muestra el array la queremos hacer usando la notación abreviada de PHP en la que no se usa `echo` deberíamos modificar dichas líneas para que queden:
 
 ```php
 <ul>
     <?php 
-    foreach ($data->categorias as $categoria){ ?>
+    foreach ($tienda->categorias as $categoria){ ?>
       <li><?= $categoria ?></li>
     <?php } ?>
   </ul>
@@ -393,6 +414,12 @@ $tienda = json_decode($json);
 </body>
 </html>
 ```
+
+Resultado:
+
+![](img/libreria_sub-categorias.png)
+
+
 Fíjate que cada categoría tiene 3 sub-elementos y que accedemos a los mismo por el valor de su clave:
 
 ```php
@@ -403,7 +430,12 @@ $categoria->activo
 
 ## Modificando elementos
 
+Para modificar un documento JSON tenemos que seguir los siguientes pasos:
+1. Decodificar el texto JSON como objeto de PHP con `json_decode()`.
+2. Hacer las modificaciones, asignando nuevos valores a las variables del objeto que almacena el JSON decodificado.
+3. Volver a codificar el objeto como texto JSON con `json_encode()`
 ```php
+<?php
 <?php
 $json = '{
   "nombre": "Lecturas del Atlántico",
@@ -415,13 +447,26 @@ $json = '{
 }';
 
 // Decodificar a objeto
-$data = json_decode($json);
-
-// Modificar el email
-$data->email = "contacto@nuevodominio.com";
-$data->categorias[] = "Juvenil"; // Añadir un elemento al final
-$data->categorias[1] = "Arte";   // Modificando el segundo elemento del array
-
-$json = json_encode($data)
+$tienda = json_decode($json);
 ?>
+
+<h2>Contenido del JSON original:</h2>
+<pre><?= $json ?></pre>
+
+<?php
+// Hacemos modificaciones
+$tienda->email = "contacto@nuevodominio.com"; // Modificar el email
+$tienda->categorias[] = "Juvenil"; // Añadir un elemento al final
+$tienda->categorias[1] = "Arte";   // Modificando el segundo elemento del array
+
+$json = json_encode($tienda, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+?>
+<h2>Contenido del JSON modificado:</h2>
+<pre><?= $json ?></pre>
 ```
+El resultado sería:
+
+![](img/libreria_modificada.png)
+
+**Nota:** a la hora de codificar el el objeto `$tienda` se le han añadido a la función `json_encode()` los parámetros `JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE` esto se hace simplemente para que a la hora de mostrarse el texto JSON lo ponga en varias líneas y tabulado. Si no añadieramos los parámetros el texto seguiría siendo correcto, pero estaría todos el JSON en una sola línea.

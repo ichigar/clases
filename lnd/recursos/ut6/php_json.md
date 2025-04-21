@@ -222,7 +222,40 @@ Para mostrar este nuevo elemento lo podríamos hacer con el código:
 ```php
 <p><strong>Vende online:</strong> <?= $data->venta_online ? 'Sí' : 'No' ?></p>
 ```
-## Mostrando json con arrays
+## Mostrando json con arrays. Los bucles.
+
+Un bucle es una instrucción que repite algo varias veces. Por ejemplo: imagina que tienes una lista de frutas y quieres decir el nombre de cada una. En vez de escribirlo uno por uno, puedes decir: "Para cada fruta en la lista, muéstrala".
+
+Eso es lo que hacen los bucles en programación. Para los arrays en PHP la estructura de control `foreach` hace justo lo que acabamos de explicar. Recorre cada elemento de una lista y guarda su valor en una varible que podemos, por ejemplo, mostrar.
+
+Su sintaxis básica es:
+
+```php
+<?php>
+$frutas = ["Manzana", "Banana", "Naranja"];
+
+foreach ($frutas as $fruta) {
+    echo $fruta . "<br>";
+}
+<?
+```
+Donde:
+- `$frutas` es el array.
+- `$fruta` toma el valor de cada elemento en cada paso del bucle.
+
+**Paso a paso**:
+
+1. PHP mira la lista `$frutas` y ve que hay 3 cosas dentro.
+2. Empieza el bucle:
+  - Toma la primera fruta: "Manzana"
+  - La mete en la variable `$fruta`
+  - Luego hace lo que está dentro del bloque `{ ... }`: en este caso, `echo $fruta`, que significa "muéstrala".
+3. Repite el **paso 2** con la siguiente fruta: "Banana"
+4. Y luego con "Naranja"
+5. Cuando ya no quedan más frutas, el bucle termina.
+
+
+Vamos a verlo ahora con una variable de tipo JSON que contiene un array:
 
 ```php
 <?php
@@ -261,13 +294,25 @@ $data->email = "contacto@nuevodominio.com";
 
   <h3>Categorías:</h3>
   <ul>
-    <?php foreach ($data->categorias as $categoria){ ?>
-      <li><?= $categoria ?></li>
-    <?php } ?>
+    <?php 
+    foreach ($data->categorias as $categoria){
+      echo "<li>$categoria</li>";
+    }?>
   </ul>
 
 </body>
 </html>
+```
+
+Si la parte en la que se muestra el array la queremos hacer usando la notación abreviada de PHP en la que no se usa `echo` deberíamos modificar dichas líneas para que queden:
+
+```php
+<ul>
+    <?php 
+    foreach ($data->categorias as $categoria){ ?>
+      <li><?= $categoria ?></li>
+    <?php } ?>
+  </ul>
 ```
 
 ## Modificando elementos

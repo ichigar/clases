@@ -224,6 +224,8 @@ Para mostrar este nuevo elemento lo podríamos hacer con el código:
 ```
 ## Mostrando json con arrays. Los bucles.
 
+### Bucles en PHP
+
 Un bucle es una instrucción que repite algo varias veces. Por ejemplo: imagina que tienes una lista de frutas y quieres decir el nombre de cada una. En vez de escribirlo uno por uno, puedes decir: "Para cada fruta en la lista, muéstrala".
 
 Eso es lo que hacen los bucles en programación. Para los arrays en PHP la estructura de control `foreach` hace justo lo que acabamos de explicar. Recorre cada elemento de una lista y guarda su valor en una varible que podemos, por ejemplo, mostrar.
@@ -254,6 +256,7 @@ Donde:
 4. Y luego con "Naranja"
 5. Cuando ya no quedan más frutas, el bucle termina.
 
+### Mostrando contenido de elemento de tipo array en JSON con bucles
 
 Vamos a verlo ahora con una variable de tipo JSON que contiene un array:
 
@@ -313,6 +316,89 @@ Si la parte en la que se muestra el array la queremos hacer usando la notación 
       <li><?= $categoria ?></li>
     <?php } ?>
   </ul>
+```
+
+### Mostrando array de elementos
+
+Si los elementos del array json no son elementos simples, sino complejos, simplemente al recorrer el array accedemos a sus sub-elementos.
+
+Ejemplo:
+
+```php
+<?php
+// JSON como string
+$json = '{
+  "nombre": "Lecturas del Atlántico",
+  "ciudad": "Las Palmas",
+  "telefono": "928123456",
+  "email": "info@lecturasatlantico.com",
+  "fundada": 1998,
+  "categorias": [
+    {
+      "nombre": "Ficción",
+      "codigo": "FIC",
+      "activo": true
+    },
+    {
+      "nombre": "Tecnología",
+      "codigo": "TEC",
+      "activo": true
+    },
+    {
+      "nombre": "Cómics",
+      "codigo": "COM",
+      "activo": false
+    }
+  ]
+}';
+
+// Decodificar el JSON como objeto
+$tienda = json_decode($json);
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información de la Librería</title>
+</head>
+<body>
+
+<h2>Información General</h2>
+<table border="1">
+  <tr><th>Campo</th><th>Valor</th></tr>
+  <tr><td>Nombre</td><td><?= $tienda->nombre ?></td></tr>
+  <tr><td>Ciudad</td><td><?= $tienda->ciudad ?></td></tr>
+  <tr><td>Teléfono</td><td><?= $tienda->telefono ?></td></tr>
+  <tr><td>Email</td><td><?= $tienda->email ?></td></tr>
+  <tr><td>Fundada</td><td><?= $tienda->fundada ?></td></tr>
+</table>
+
+<h2>Categorías</h2>
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Código</th>
+    <th>¿Activa?</th>
+  </tr>
+  <?php foreach ($tienda->categorias as $categoria){ ?>
+    <tr>
+      <td><?= $categoria->nombre ?></td>
+      <td><?= $categoria->codigo ?></td>
+      <td><?= $categoria->activo ? 'Sí' : 'No' ?></td>
+    </tr>
+  <?php } ?>
+</table>
+
+</body>
+</html>
+```
+Fíjate que cada categoría tiene 3 sub-elementos y que accedemos a los mismo por el valor de su clave:
+
+```php
+$categoria->nombre
+$categoria->codigo
+$categoria->activo
 ```
 
 ## Modificando elementos

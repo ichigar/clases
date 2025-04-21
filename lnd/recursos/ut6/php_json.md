@@ -9,7 +9,7 @@ A diferencia del HTML, que solo muestra contenido, PHP piensa y decide qué most
 
 ### Introducción
 
-Podemos mezclar código PHP con HTML para ello hemos de tener en cuenta que hemos de cambiar la extensión del archivo de `.hmtl` a `.php` , y su código va entre estas etiquetas:
+Podemos mezclar código PHP con HTML para ello hemos de tener en cuenta que hemos de cambiar la extensión del archivo de `.html` a `.php` , y su código va entre estas etiquetas:
 
 ```php
 <?php
@@ -17,9 +17,9 @@ Podemos mezclar código PHP con HTML para ello hemos de tener en cuenta que hemo
 ?>
 ```
 
-### Mostrando PHP
+### Mostrando PHP. La instrucción `echo`
 
-Para mostrar información generada en PHP dentro del HTML utilizamos la instrucción `echo`
+Para mostrar información generada en PHP dentro del HTML utilizamos la instrucción (una construcción del lenguaje PHP) `echo`.
 
 ```php
 <h1>Saludando con PHP</h1>
@@ -28,7 +28,9 @@ Para mostrar información generada en PHP dentro del HTML utilizamos la instrucc
 ?>
 ```
 
-De forma más abreviada:
+Existe una forma más abreviada de usar `echo`. En PHP podemos sustituir `<? php echo` por `<?=`.
+
+El ejemplo anterior de forma abreviada sería.:
 
 ```php
 <h1>Saludando con PHP</h1>
@@ -37,18 +39,18 @@ De forma más abreviada:
 
 ### PHP es dinámico
 
-El resultado del PHP se genera en el momento de invocar la página en el navegador. El interprete de PHP en el servidor ejecuta el código, lo inserta en el HTML  en el punto en que es invocado y lo envía al cliente que lo visualiza en el navegador:
+El resultado del PHP se genera en el momento de invocar la página en el navegador. El interprete de PHP en el servidor ejecuta el código, lo inserta en el HTML en el punto en que es invocado y lo envía al cliente que lo visualiza en el navegador:
 
 ```php
 <h1>Bienvenido</h1>
-<p>Hoy es <?php echo date("d/m/Y"); ?></p>
+<p>Hoy es <?php echo date("d/m/Y h:i:s"); ?></p>
 ```
 
 Este ejemplo muestra la fecha actual automáticamente. El navegador recibe solo HTML, pero PHP genera ese HTML de forma dinámica antes.
 
 ## Las variables
 
-Imagina que estás trabajando con una hoja de papel. En ella puedes **anotar cosas** para usarlas más tarde: un nombre, un número, una ciudad…
+Imagina que estás trabajando con una hoja de papel. En ella puedes **anotar cosas** para usarlas más tarde: un **nombre**, un **número**, una **ciudad**…
 
 En programación, eso mismo se hace con algo llamado **variable**.
 
@@ -77,14 +79,12 @@ echo "Hola, $nombre";
 
 - `$nombre` es la **variable**. El nombre de la cajita.
 - `"Carlos"` es el valor que guardamos.
-- `echo` es como decir: "muéstrame esto en pantalla".
-- Al usar `echo "Hola, $nombre"`, PHP mostrará: `Hola, Carlos`
+- Al usar `echo "Hola, $nombre"`, PHP mostrará: `Hola, Carlos`: el contenido de la variable es sustituido al generar el HTML que se manda al cliente.
 
 A tener en cuenta:
 
 - `$` - Todas las variables empiezan con `$` en PHP.
 - `=` - Se usa para **guardar un valor** en la variable. 
-- `echo` - Se usa para **mostrar información** al usuario.
 
 
 
@@ -197,6 +197,31 @@ $data = json_decode($json);
 </html>
 ```
 
+## Mostrando elementos de tipo booleano
+
+Para mostrar elementos de JSON cuyo tipo es booleano, esto es que su valor es `true` o `false` la forma más corta de hacerlo es usando el operador `? :` de PHP de la siguiente forma:
+
+```php
+<?= $variable_json->elemento ? 'Texto para true' : 'Texto para false' ?>
+```
+
+Por ejemplo si la variable **json** del apartado anterior la modificamos para que tenga el elemento `venta_online` de tipo booleano:
+
+```json
+{
+  "nombre": "Lecturas del Atlántico",
+  "ciudad": "Las Palmas",
+  "telefono": "928123456",
+  "email": "info@lecturasatlantico.com",
+  "fundada": 1998,
+  "venta_online": false
+}
+```
+Para mostrar este nuevo elemento lo podríamos hacer con el código:
+
+```php
+<p><strong>Vende online:</strong> <?= $data->venta_online ? 'Sí' : 'No' ?></p>
+```
 ## Mostrando json con arrays
 
 ```php
@@ -243,7 +268,6 @@ $data->email = "contacto@nuevodominio.com";
 
 </body>
 </html>
-
 ```
 
 ## Modificando elementos

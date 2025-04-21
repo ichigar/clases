@@ -472,7 +472,9 @@ El resultado sería:
 
 ![](img/libreria_modificada.png)
 
-**Nota:** a la hora de codificar el el objeto `$tienda` se le han añadido a la función `json_encode()` los parámetros `JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE` esto se hace simplemente para que a la hora de mostrarse el texto JSON lo ponga en varias líneas y tabulado. Si no añadieramos los parámetros el texto seguiría siendo correcto, pero estaría todos el JSON en una sola línea.
+**Nota 1:** para acceder a los elementos se pone entre corchetes `[]` el número con la posición que ocupa en el array el elemento que quedemos modificar, teniendo en cuenta que el primer elemento ocupa la posición **0**, el segundo la posición **1** y así sucesivamente.
+
+**Nota 2:** a la hora de codificar el el objeto `$tienda` se le han añadido a la función `json_encode()` los parámetros `JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE` esto se hace simplemente para que a la hora de mostrarse el texto JSON lo ponga en varias líneas y tabulado. Si no añadieramos los parámetros el texto seguiría siendo correcto, pero estaría todos el JSON en una sola línea.
 
 ## Modificando la clave de elementos
 

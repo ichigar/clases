@@ -428,14 +428,16 @@ $categoria->codigo
 $categoria->activo
 ```
 
-## Modificando elementos
+## Modificando valor de elementos
 
 Para modificar un documento JSON tenemos que seguir los siguientes pasos:
 1. Decodificar el texto JSON como objeto de PHP con `json_decode()`.
 2. Hacer las modificaciones, asignando nuevos valores a las variables del objeto que almacena el JSON decodificado.
 3. Volver a codificar el objeto como texto JSON con `json_encode()`
+
+**Ejemplo:**
+
 ```php
-<?php
 <?php
 $json = '{
   "nombre": "Lecturas del Atlántico",
@@ -470,3 +472,49 @@ El resultado sería:
 ![](img/libreria_modificada.png)
 
 **Nota:** a la hora de codificar el el objeto `$tienda` se le han añadido a la función `json_encode()` los parámetros `JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE` esto se hace simplemente para que a la hora de mostrarse el texto JSON lo ponga en varias líneas y tabulado. Si no añadieramos los parámetros el texto seguiría siendo correcto, pero estaría todos el JSON en una sola línea.
+
+## Modificando la clave de elementos
+
+Si lo que queremos es modificar la clave de un determinado elemento, los pasos que tenemos que dar son:
+
+1. Decodificar el texto JSON como objeto de PHP con `json_decode()`.
+2. Guardar en la nueva clave el valor del elemento que tenía anteriormente la clave a modificar.
+3. Eliminar con la función `unset()` el elemeto al que le cambiamos la clave.
+4. Volver a codificar el objeto como texto JSON con `json_encode()`
+
+**Ejemplo:**
+
+```php
+<?php
+$json = '{
+  "nombre": "Lecturas del Atlántico",
+  "ciudad": "Las Palmas",
+  "telefono": "928123456",
+  "email": "info@lecturasatlantico.com",
+  "fundada": 1998,
+  "categorias": ["Ficción", "Tecnología", "Cómics", "Infantil"]
+}';
+
+// Decodificar a objeto
+$tienda = json_decode($json);
+?>
+
+<h2>Contenido del JSON original:</h2>
+<pre><?= $json ?></pre>
+
+<?php
+// Hacemos modificaciones
+$tienda->correo = $tienda->email;  // Guardamos en nuevo elemento el valor del anterior
+unset($tienda->email);   // Eliminamos el elemento email
+
+$json = json_encode($tienda, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+?>
+<h2>Contenido del JSON modificado:</h2>
+<pre><?= $json ?></pre>
+```
+El resultado sería:
+
+![](img/libreria_clave_modificada.png)
+
+**Nota:** Fíjate que el elemento con clave `email` a desaparecido y que se ha añadido al final del docuemnto JSON un elemento nuevo con clave `correo` que contiene el valor anterior de `email`

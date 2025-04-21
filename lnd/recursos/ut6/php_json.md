@@ -342,7 +342,7 @@ Si la parte en la que se muestra el array la queremos hacer usando la notación 
 
 ### Mostrando array de elementos
 
-Si los elementos del array json no son elementos simples, sino complejos, simplemente al recorrer el array accedemos a sus sub-elementos.
+Si los elementos del array json no son elementos simples, sino que estos a su vez contienen subelementos, simplemente, en cada paso del bucle, accedemos a sus subelementos.
 
 Ejemplo:
 

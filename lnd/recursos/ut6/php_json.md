@@ -160,7 +160,8 @@ echo strtoupper("bienvenido"); // Resultado: BIENVENIDO
 - `"bienvenido"` es el parámetro.  
 - La función lo convierte todo a mayúsculas.
 
-### 🧮 `rand()`  
+### `rand()`
+
 Genera un número aleatorio.
 
 ```php

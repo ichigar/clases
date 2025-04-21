@@ -261,9 +261,9 @@ $data->email = "contacto@nuevodominio.com";
 
   <h3>Categorías:</h3>
   <ul>
-    <?php foreach ($data->categorias as $categoria): ?>
+    <?php foreach ($data->categorias as $categoria){ ?>
       <li><?= $categoria ?></li>
-    <?php endforeach; ?>
+    <?php } ?>
   </ul>
 
 </body>

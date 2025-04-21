@@ -419,8 +419,8 @@ $data = json_decode($json);
 
 // Modificar el email
 $data->email = "contacto@nuevodominio.com";
-$data->categorias[] = "Juvenil";
-$data->categorias[1] = "Arte";
+$data->categorias[] = "Juvenil"; // Añadir un elemento al final
+$data->categorias[1] = "Arte";   // Modificando el segundo elemento del array
 
 $json = json_encode($data)
 ?>

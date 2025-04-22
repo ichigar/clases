@@ -167,6 +167,31 @@ Genera un número aleatorio.
 ```php
 echo rand(1, 10); // Resultado: un número entre 1 y 10
 ```
+## Concatenando texto en PHP con `.`
+
+En PHP, el operador `.` se utiliza para unir (concatenar) cadenas de texto. Las cadenas pueden ser texto entre comillas, el contenido de una variable o el resultado de ejecutar una función. En general cualquier expresión en PHP que al evaluarse produzca una cadena de caractéres.
+
+### Ejemplos
+
+```php
+$nombre = "Juan";
+$saludo = "Hola, " . $nombre;
+echo $saludo;
+```
+- Salida: `Hola, Juan`
+
+```php
+$dia = "lunes";
+$mensaje = "Hoy es " . $dia . ", ¡que tengas un buen día!";
+echo $mensaje;
+```
+- Salida: Hoy es lunes, ¡que tengas un buen día!
+
+```php
+$frase = "Tu número aleatorio es: " . rand(1, 100);
+echo $frase;
+```
+- Posible salida: Tu número aleatorio es: 47
 
 ## Usando PHP para mostrar json simple
 

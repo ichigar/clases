@@ -6,7 +6,7 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
 
 1. **Sala de telecomunicaciones (cuarto de comunicaciones):**
 
-   * Pequeño armario o rack donde se centralizan los equipos activos (switch, router, patch panel).
+   * Pequeño armario o rack donde se centralizan los equipos de la red local.
    * Puede estar en un armario mural si el espacio es muy reducido.
 
 ![Armario mural](img/armario_telecomunicaciones.png)

@@ -32,7 +32,7 @@
 ### Apuntes
 
 - [Espacios y elementos de un SCE](apuntes/ut6/espacios_sce_local.md)
-- [Categoría de una red local]
+- [Categoría y clase de una red local](apuntes/ut6/categoria_sce.md)
 - [Cableado de una red local](apuntes/ut6/cableado_lan.md)
 - [Normativa general de los SCE](apuntes/ut6/normativa_sce.md)
 - [Normativa aplicable a elementos y espacios de un SCE](apuntes/ut6/normativa_elementos-espacios-sce.md)

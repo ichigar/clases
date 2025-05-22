@@ -26,3 +26,11 @@
 
 - [Redes inalámbricas](apuntes/ut5/redes_inalmabricas.md)
 - [Puntos de acceso](apuntes/ut5/punto_acceso.md)
+
+## UT6 - Elementos y espacios de una red local
+
+### Apuntes
+
+- [Espacios y elementos de un SCE](apuntes/ut6/espacios_sce_local.md)
+- [Normativa general de los SCE](apuntes/ut6/normativa_sce.md)
+- [Normativa aplicable a elementos y espacios de un SCE](apuntes/ut6/normativa_elementos-espacios-sce.md)

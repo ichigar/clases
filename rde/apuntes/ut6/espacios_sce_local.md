@@ -25,6 +25,10 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
 4. **Puntos de consolidación (opcional):**
 
    * Si el local es grande, se pueden usar cajas de distribución intermedias para facilitar el despliegue.
+   * Se suelen usar en zonas en las que los espacios suelen modificarse como oficinas abiertas, aulas móviles o salas polivalentes. Permite mayor flexibilidad en la distribución de tomas de red.
+   * El cableado horizontal desde el patch panel (en el rack o armario mural) llega al punto de consolidación.* En el punto de consolidación se instalan conectores hembra RJ-45 (tipo módulo o caja).
+   * Desde ahí, se tienden cables flexibles (latiguillos o tramos cortos) hasta las tomas de usuario.
+   * En función de los espacios ocupados en el punto de consolidación se conectan latiguillos para dar conectividad a los mismos.
 
 ![Punto de consolidación](img/punto_consolidacion.png)
 

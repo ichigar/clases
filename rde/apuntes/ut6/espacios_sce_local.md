@@ -32,7 +32,7 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
 
 ![Punto de consolidación](img/punto_consolidacion.png)
 
-##  Elementos del cableado estructurado
+##  Elementos del cableado estructurado (red de un solo local)
 
 ![Elementos cableado estructurado](img/elementos_ce.png)
 

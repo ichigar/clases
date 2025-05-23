@@ -4,14 +4,14 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
 
 ## Espacios de la instalación
 
-1. **Sala de telecomunicaciones (cuarto de comunicaciones):**
+### 1. Sala de telecomunicaciones (cuarto de comunicaciones)
 
    * Pequeño armario o rack donde se centralizan los equipos de la red local.
    * Puede estar en un armario mural si el espacio es muy reducido.
 
 ![Armario mural](img/armario_telecomunicaciones.png)
 
-2. **Área de trabajo:**
+### 2. Área de trabajo
 
    * Es la zona donde los usuarios finales se conectan a la red. 
    * Espacio físico que comprende los puestos de trabajo con dispositivos como ordenadores, teléfonos, impresoras en red, etc., 
@@ -26,7 +26,7 @@ Comprende:
 
 ![Área de trabajo](img/area_trabajo.png)
 
-3. **Canalizaciones:**
+### 3. Canalizaciones
 
 Son los elementos encargados de: 
 
@@ -49,7 +49,7 @@ Los tipos de canalizaciones más comunes son:
 
 ![Suelo técnico](img/suelo_tecnico.png)
 
-4. **Puntos de consolidación (opcional):**
+### 4. Puntos de consolidación (opcional)
 
    * Si el local es grande, se pueden usar cajas de distribución intermedias para facilitar el despliegue.
    * Se suelen usar en zonas en las que los espacios suelen modificarse como oficinas abiertas, aulas móviles o salas polivalentes. Permite mayor flexibilidad en la distribución de tomas de red.

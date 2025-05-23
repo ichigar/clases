@@ -61,10 +61,11 @@ El cableado de fibra óptica no se suele usar para tomas de usuario.
 ##### 1. Según el tipo de fibra
 
 Existen dos tecnologías según el tipo de fibra:
-| Tipo de fibra      | Descripción                                                             | Uso en redes locales                                                |
-| ------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **Multimodo (MM)** | Núcleo más grueso (50/125 o 62,5/125 µm), transmite varios modos de luz | El más usado en LANs, enlaces cortos (≤ 550 m)                    |
-| **Monomodo (SM)**  | Núcleo muy fino (9/125 µm), transmite un solo modo de luz               | Usado en enlaces de larga distancia (>1 km), menos común en LANs |
+
+| Tipo de fibra      | Descripción | Uso en redes locales  |
+| ------------------ | ----------- | --------------------- |
+| Multimodo (MM) | Núcleo más grueso (50/125 o 62,5/125 µm), transmite varios modos de luz | El más usado en LANs, enlaces cortos (≤ 550 m) | 
+| Monomodo (SM) | Núcleo muy fino (9/125 µm), transmite un solo modo de luz  | Usado en enlaces de larga distancia (>1 km), menos común en LANs |
 
 Ambas se suelen utilizar en redes locales, normalmente para los enlaces se usan dos fibras (duplex): una para transmitir (Tx) y otra para recibir (Rx), lo que permite enviar y recibir de forma simultanea.
 

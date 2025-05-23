@@ -1,4 +1,4 @@
-# Normativa aplicable a los elementos y espacios de un sistema de cableado estructurado
+# Criterios y restricciones aplicables a los elementos y espacios de un sistema de cableado estructurado
 
 La normativa en la instalación y diseño de un sistema de cableado estructurado sirve para garantizar la **calidad**, **seguridad**, **eficiencia** y **escalabilidad** de la red. 
 

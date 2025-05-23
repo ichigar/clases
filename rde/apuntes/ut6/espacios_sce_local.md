@@ -13,14 +13,41 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
 
 2. **Área de trabajo:**
 
-   * Espacios donde se ubican los puestos de usuario (ordenadores, impresoras, teléfonos IP...).
+   * Es la zona donde los usuarios finales se conectan a la red. 
+   * Espacio físico que comprende los puestos de trabajo con dispositivos como ordenadores, teléfonos, impresoras en red, etc., 
+   * Está conectado al resto de la red mediante el cableado horizontal.
+
+Comprende:
+
+   * Tomas de red (RJ-45) instaladas en pared, suelo, mobiliario, etc
+   * Latiguillos de conexión que unen la toma con el equipo del usuario.
+   * Equipos terminales del usuario (PC, impresora, teléfono IP...).
+   * Mobiliario y elementos que forman parte del entorno funcional (mesa, silla, canaleta...).
 
 ![Área de trabajo](img/area_trabajo.png)
 
 3. **Canalizaciones:**
 
-   * Bandejas, tubos o canaletas para organizar el paso del cableado.
-   * Deben permitir mantenimiento y futuras ampliaciones.
+Son los elementos encargados de: 
+
+* **Proteger** los cables frente a daños mecánicos, humedad, interferencias, calor o aplastamiento.
+* **Guiar** los cables por recorridos planificados (paredes, suelos, techos, columnas).
+* **Separar** cables de distintas funciones (datos, energía, control) según normativa.
+* Permitir **mantenimiento y ampliación** sin necesidad de rehacer la instalación.
+
+Los tipos de canalizaciones más comunes son: 
+| Tipo de canalización              | Descripción                                      | Uso típico                                    |
+| --------------------------------- | ------------------------------------------------ | --------------------------------------------- |
+| **Canaleta**                      | Conducto superficial de PVC o metálico con tapa  | Oficinas, aulas, paredes o rodapié            |
+| **Bandeja portacables**           | Estructura abierta metálica (rejilla o escalera) | Falsos techos, racks, centros de datos        |
+| **Tubo corrugado o rígido**       | Tubería empotrada en pared o suelo               | Viviendas, obra nueva, canalizaciones ocultas |
+| **Suelos técnicos / cajas suelo** | Espacios bajo suelo elevado con registros        | Oficinas con distribución flexible            |
+
+![Canaleta](img/canaleta_elementos.png)
+
+![Bandeja portacable](img/bandejas_portacable.png)
+
+![Suelo técnico](img/suelo_tecnico.png)
 
 4. **Puntos de consolidación (opcional):**
 
@@ -29,6 +56,8 @@ En una instalación de red local pequeña limitada a un local, la infraestructur
    * El cableado horizontal desde el patch panel (en el rack o armario mural) llega al punto de consolidación.* En el punto de consolidación se instalan conectores hembra RJ-45 (tipo módulo o caja).
    * Desde ahí, se tienden cables flexibles (latiguillos o tramos cortos) hasta las tomas de usuario.
    * En función de los espacios ocupados en el punto de consolidación se conectan latiguillos para dar conectividad a los mismos.
+
+![CP](img/cp.jpg)
 
 ![Punto de consolidación](img/punto_consolidacion.png)
 

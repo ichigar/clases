@@ -68,7 +68,7 @@ Los tipos de canalizaciones más comunes son:
 **Cableado horizontal:**
 
    * Cableado que va desde el rack o armario de comunicaciones hasta cada área de trabajo.
-   * Generalmente es **cable UTP categoría 6**.
+   * Generalmente es **cable UTP categoría 6** o superior.
 
 **Panel de parcheo o patch panel:**
 

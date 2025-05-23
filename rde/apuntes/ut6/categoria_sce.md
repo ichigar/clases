@@ -60,7 +60,6 @@ En la **normativa europea e internacional** (como **UNE-EN 50173** e **ISO/IEC 1
 | **Clase I**       | Cat 8.1                             | 2000 MHz            | 25/40 Gbps (≤30 m)       | Centros de datos        |
 | **Clase II**      | Cat 8.2                             | 2000 MHz            | 25/40 Gbps (≤30 m)       | Muy alta velocidad      |
 
----
 
 ### Uso de clases
 

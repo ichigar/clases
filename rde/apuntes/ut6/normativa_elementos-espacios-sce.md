@@ -66,8 +66,7 @@ Otros aspectos a tener en cuenta:
 - Su anchura ha de ser como mínimo el doble de la anchura necesaria para albergar el cable actual.
 - Las canaletas no tendrán una profundidad superior a 15 cm. De esta forma se evita el aplastamiento de los cables
 por sobrepeso.
-- Para el dimensionamiento de las canalizaciones, se realizará en base a 125 mm2 por cada área de trabajo (2 cables)
-a la que de servicio dicha canalización.
+- Para el dimensionamiento de las canalizaciones, se realizará en base a 80 mm2 por cada área de trabajo (2 cables) a la que de servicio dicha canalización.
 
 
 
